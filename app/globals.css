@@ -1,0 +1,6 @@
+/* Vendored scaffold CSS variables — must come before Tailwind directives. */
+@import '../vendor/scaffold/styles.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

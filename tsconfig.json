@@ -1,0 +1,108 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@scaffold": [
+        "./vendor/scaffold/components/scaffold/index.ts"
+      ],
+      "@scaffold/*": [
+        "./vendor/scaffold/components/scaffold/*"
+      ],
+      "@/components/atoms/*": [
+        "./vendor/scaffold/components/scaffold/atoms/*"
+      ],
+      "@/components/molecules/*": [
+        "./vendor/scaffold/components/scaffold/molecules/*"
+      ],
+      "@/components/organisms/*": [
+        "./vendor/scaffold/components/scaffold/organisms/*"
+      ],
+      "@/types/entity/*": [
+        "./vendor/scaffold/types/scaffold/*"
+      ],
+      "@/types/currency": [
+        "./vendor/scaffold/types/scaffold/currency"
+      ],
+      "@/types/currency/*": [
+        "./vendor/scaffold/types/scaffold/currency"
+      ],
+      "@/*": [
+        "./vendor/scaffold/*"
+      ],
+      "use-intl": [
+        "./vendor/scaffold/adapters/use-intl"
+      ],
+      "next-intl": [
+        "./vendor/scaffold/adapters/next-intl"
+      ],
+      "next/image": [
+        "./vendor/scaffold/adapters/next-image"
+      ],
+      "next/link": [
+        "./vendor/scaffold/adapters/next-link"
+      ],
+      "next/router": [
+        "./vendor/scaffold/adapters/next-router"
+      ],
+      "next-cloudinary": [
+        "./vendor/stubs/next-cloudinary"
+      ],
+      "next-client-cookies": [
+        "./vendor/stubs/next-client-cookies"
+      ],
+      "isomorphic-dompurify": [
+        "./vendor/stubs/isomorphic-dompurify"
+      ],
+      "markdown": [
+        "./vendor/stubs/markdown"
+      ],
+      "@commercetools/frontend-sdk": [
+        "./vendor/stubs/commercetools-frontend-sdk"
+      ],
+      "@commercetools/frontend-sdk/lib/types/api/page": [
+        "./vendor/stubs/commercetools-frontend-sdk"
+      ],
+      "@commercetools/checkout-browser-sdk": [
+        "./vendor/stubs/commercetools-checkout-browser-sdk"
+      ]
+    },
+    "allowJs": true
+  },
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "vendor/scaffold/**/*.ts",
+    "vendor/scaffold/**/*.tsx",
+    "next-env.d.ts",
+    "vendor/scaffold/types/scaffold-externals.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
+}

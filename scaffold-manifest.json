@@ -1,0 +1,5368 @@
+{
+  "generatedAt": "2026-04-27T12:25:57.085Z",
+  "components": [
+    {
+      "name": "Button",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/button",
+      "importFromBarrel": "import { Button } from '@scaffold';",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'underlined' | 'ghost' | 'warning'",
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "'xs' | 's' | 'm' | 'l' | 'fit' | 'full'",
+          "required": false
+        },
+        {
+          "name": "iconPosition",
+          "type": "'left' | 'right'",
+          "required": false
+        },
+        {
+          "name": "Icon",
+          "type": "React.ForwardRefExoticComponent< Omit<React.SVGProps<SVGSVGElement>, 'ref'> & { title?: string | undefined; titleId?: string | undefined; } & React.RefAttributes<SVGSVGElement> >",
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "added",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "asSkeleton",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ButtonProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "React.ComponentProps<'button'>"
+      ],
+      "example": "<Button size='xs' />",
+      "notes": []
+    },
+    {
+      "name": "Checkbox",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/checkbox",
+      "importFromBarrel": "import { Checkbox } from '@scaffold';",
+      "props": [
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'lg'",
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "required": false
+        },
+        {
+          "name": "onChecked",
+          "type": "(val: boolean) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "CheckboxProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "Omit<React.ComponentProps<'input'>, 'size'>"
+      ],
+      "example": "<Checkbox label='Text' />",
+      "notes": []
+    },
+    {
+      "name": "ColoredVariants",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/colored-variants",
+      "importFromBarrel": "import { ColoredVariants } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No ColoredVariantsProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "Dropdown",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/dropdown",
+      "importFromBarrel": "import { Dropdown } from '@scaffold';",
+      "props": [
+        {
+          "name": "size",
+          "type": "'sm' | 'lg'",
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "defaultValue",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "DropdownProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Dropdown />",
+      "notes": []
+    },
+    {
+      "name": "FlagIcon",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/icons",
+      "importFromBarrel": "import { FlagIcon } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No FlagIconProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "FlagIconSquare",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/icons",
+      "importFromBarrel": "import { FlagIconSquare } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No FlagIconSquareProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "Image",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/Image",
+      "importFromBarrel": "import { Image } from '@scaffold';",
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "crossOrigin",
+          "type": "'' | 'anonymous' | 'use-credentials'",
+          "required": false
+        },
+        {
+          "name": "decoding",
+          "type": "\"async\" | \"auto\" | \"sync\" | undefined",
+          "required": false
+        },
+        {
+          "name": "fetchPriority",
+          "type": "\"high\" | \"low\" | \"auto\"",
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "loading",
+          "type": "\"lazy\" | \"eager\"",
+          "required": false
+        },
+        {
+          "name": "referrerPolicy",
+          "type": "HTMLAttributeReferrerPolicy | undefined",
+          "required": false
+        },
+        {
+          "name": "sizes",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "srcSet",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "useMap",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "defaultValue",
+          "type": "string | number | readonly string[] | undefined",
+          "required": false
+        },
+        {
+          "name": "suppressContentEditableWarning",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "suppressHydrationWarning",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "accessKey",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "autoCapitalize",
+          "type": "\"off\" | \"none\" | \"on\" | \"sentences\" | \"words\" | \"characters\" | undefined | (string & {})",
+          "required": false
+        },
+        {
+          "name": "autoFocus",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "contentEditable",
+          "type": "Booleanish | \"inherit\" | \"plaintext-only\" | undefined",
+          "required": false
+        },
+        {
+          "name": "contextMenu",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "dir",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "draggable",
+          "type": "Booleanish | undefined",
+          "required": false
+        },
+        {
+          "name": "enterKeyHint",
+          "type": "\"enter\" | \"done\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+          "required": false
+        },
+        {
+          "name": "hidden",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "id",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "lang",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "nonce",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "slot",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "spellCheck",
+          "type": "Booleanish | undefined",
+          "required": false
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false
+        },
+        {
+          "name": "tabIndex",
+          "type": "number | undefined",
+          "required": false
+        },
+        {
+          "name": "translate",
+          "type": "\"yes\" | \"no\" | undefined",
+          "required": false
+        },
+        {
+          "name": "radioGroup",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "role",
+          "type": "AriaRole | undefined",
+          "required": false
+        },
+        {
+          "name": "about",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "content",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "datatype",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "inlist",
+          "type": "any",
+          "required": false
+        },
+        {
+          "name": "prefix",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "property",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "rel",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "resource",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "rev",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "typeof",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "vocab",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "autoCorrect",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "autoSave",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "itemProp",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "itemScope",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "itemType",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "itemID",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "itemRef",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "results",
+          "type": "number | undefined",
+          "required": false
+        },
+        {
+          "name": "security",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "unselectable",
+          "type": "\"on\" | \"off\" | undefined",
+          "required": false
+        },
+        {
+          "name": "popover",
+          "type": "\"\" | \"auto\" | \"manual\" | \"hint\" | undefined",
+          "required": false
+        },
+        {
+          "name": "popoverTargetAction",
+          "type": "\"toggle\" | \"show\" | \"hide\" | undefined",
+          "required": false
+        },
+        {
+          "name": "popoverTarget",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "inert",
+          "type": "boolean | undefined",
+          "required": false
+        },
+        {
+          "name": "inputMode",
+          "type": "\"none\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"numeric\" | \"decimal\" | \"search\" | undefined",
+          "required": false,
+          "jsdoc": "Hints at the type of data that might be entered by the user while editing the element or its contents"
+        },
+        {
+          "name": "is",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Specify that a standard HTML element should behave like a defined custom built-in element"
+        },
+        {
+          "name": "exportparts",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "part",
+          "type": "string | undefined",
+          "required": false
+        },
+        {
+          "name": "aria-activedescendant",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application."
+        },
+        {
+          "name": "aria-atomic",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute."
+        },
+        {
+          "name": "aria-autocomplete",
+          "type": "\"none\" | \"inline\" | \"list\" | \"both\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be\npresented if they are made."
+        },
+        {
+          "name": "aria-braillelabel",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user."
+        },
+        {
+          "name": "aria-brailleroledescription",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a human-readable, author-localized abbreviated description for the role of an element, which is intended to be converted into Braille."
+        },
+        {
+          "name": "aria-busy",
+          "type": "Booleanish | undefined",
+          "required": false
+        },
+        {
+          "name": "aria-checked",
+          "type": "boolean | \"false\" | \"mixed\" | \"true\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates the current \"checked\" state of checkboxes, radio buttons, and other widgets."
+        },
+        {
+          "name": "aria-colcount",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the total number of columns in a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-colindex",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-colindextext",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a human readable text alternative of aria-colindex."
+        },
+        {
+          "name": "aria-colspan",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-controls",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the element (or elements) whose contents or presence are controlled by the current element."
+        },
+        {
+          "name": "aria-current",
+          "type": "boolean | \"false\" | \"true\" | \"page\" | \"step\" | \"location\" | \"date\" | \"time\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates the element that represents the current item within a container or set of related elements."
+        },
+        {
+          "name": "aria-describedby",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the element (or elements) that describes the object."
+        },
+        {
+          "name": "aria-description",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a string value that describes or annotates the current element."
+        },
+        {
+          "name": "aria-details",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the element that provides a detailed, extended description for the object."
+        },
+        {
+          "name": "aria-disabled",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable."
+        },
+        {
+          "name": "aria-dropeffect",
+          "type": "\"none\" | \"copy\" | \"execute\" | \"link\" | \"move\" | \"popup\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates what functions can be performed when a dragged object is released on the drop target."
+        },
+        {
+          "name": "aria-errormessage",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the element that provides an error message for the object."
+        },
+        {
+          "name": "aria-expanded",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed."
+        },
+        {
+          "name": "aria-flowto",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion,\nallows assistive technology to override the general default of reading in document source order."
+        },
+        {
+          "name": "aria-grabbed",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates an element's \"grabbed\" state in a drag-and-drop operation."
+        },
+        {
+          "name": "aria-haspopup",
+          "type": "boolean | \"false\" | \"true\" | \"menu\" | \"listbox\" | \"tree\" | \"grid\" | \"dialog\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
+        },
+        {
+          "name": "aria-hidden",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether the element is exposed to an accessibility API."
+        },
+        {
+          "name": "aria-invalid",
+          "type": "boolean | \"false\" | \"true\" | \"grammar\" | \"spelling\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates the entered value does not conform to the format expected by the application."
+        },
+        {
+          "name": "aria-keyshortcuts",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element."
+        },
+        {
+          "name": "aria-label",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a string value that labels the current element."
+        },
+        {
+          "name": "aria-labelledby",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies the element (or elements) that labels the current element."
+        },
+        {
+          "name": "aria-level",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the hierarchical level of an element within a structure."
+        },
+        {
+          "name": "aria-live",
+          "type": "\"off\" | \"assertive\" | \"polite\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region."
+        },
+        {
+          "name": "aria-modal",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether an element is modal when displayed."
+        },
+        {
+          "name": "aria-multiline",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether a text box accepts multiple lines of input or only a single line."
+        },
+        {
+          "name": "aria-multiselectable",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates that the user may select more than one item from the current selectable descendants."
+        },
+        {
+          "name": "aria-orientation",
+          "type": "\"horizontal\" | \"vertical\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous."
+        },
+        {
+          "name": "aria-owns",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship\nbetween DOM elements where the DOM hierarchy cannot be used to represent the relationship."
+        },
+        {
+          "name": "aria-placeholder",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value.\nA hint could be a sample value or a brief description of the expected format."
+        },
+        {
+          "name": "aria-posinset",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines an element's number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM."
+        },
+        {
+          "name": "aria-pressed",
+          "type": "boolean | \"false\" | \"mixed\" | \"true\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates the current \"pressed\" state of toggle buttons."
+        },
+        {
+          "name": "aria-readonly",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates that the element is not editable, but is otherwise operable."
+        },
+        {
+          "name": "aria-relevant",
+          "type": "| \"additions\" | \"additions removals\" | \"additions text\" | \"all\" | \"removals\" | \"removals additions\" | \"removals text\" | \"text\" | \"text additions\" | \"text removals\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified."
+        },
+        {
+          "name": "aria-required",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates that user input is required on the element before a form may be submitted."
+        },
+        {
+          "name": "aria-roledescription",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a human-readable, author-localized description for the role of an element."
+        },
+        {
+          "name": "aria-rowcount",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the total number of rows in a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-rowindex",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-rowindextext",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines a human readable text alternative of aria-rowindex."
+        },
+        {
+          "name": "aria-rowspan",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid."
+        },
+        {
+          "name": "aria-selected",
+          "type": "Booleanish | undefined",
+          "required": false,
+          "jsdoc": "Indicates the current \"selected\" state of various widgets."
+        },
+        {
+          "name": "aria-setsize",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM."
+        },
+        {
+          "name": "aria-sort",
+          "type": "\"none\" | \"ascending\" | \"descending\" | \"other\" | undefined",
+          "required": false,
+          "jsdoc": "Indicates if items in a table or grid are sorted in ascending or descending order."
+        },
+        {
+          "name": "aria-valuemax",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the maximum allowed value for a range widget."
+        },
+        {
+          "name": "aria-valuemin",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the minimum allowed value for a range widget."
+        },
+        {
+          "name": "aria-valuenow",
+          "type": "number | undefined",
+          "required": false,
+          "jsdoc": "Defines the current value for a range widget."
+        },
+        {
+          "name": "aria-valuetext",
+          "type": "string | undefined",
+          "required": false,
+          "jsdoc": "Defines the human readable text alternative of aria-valuenow for a range widget."
+        },
+        {
+          "name": "children",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "dangerouslySetInnerHTML",
+          "type": "{ // Should be InnerHTML['innerHTML']. // But unfortunately we're mixing renderer-specific type declarations. __html: string | TrustedHTML; } | undefined",
+          "required": false
+        },
+        {
+          "name": "onCopy",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCopyCapture",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCut",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCutCapture",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPaste",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPasteCapture",
+          "type": "ClipboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionEnd",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionEndCapture",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionStart",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionStartCapture",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionUpdate",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCompositionUpdateCapture",
+          "type": "CompositionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onFocus",
+          "type": "FocusEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onFocusCapture",
+          "type": "FocusEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onBlur",
+          "type": "FocusEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onBlurCapture",
+          "type": "FocusEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onChange",
+          "type": "ChangeEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onChangeCapture",
+          "type": "ChangeEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onBeforeInput",
+          "type": "InputEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onBeforeInputCapture",
+          "type": "InputEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onInput",
+          "type": "InputEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onInputCapture",
+          "type": "InputEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onReset",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onResetCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSubmit",
+          "type": "SubmitEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSubmitCapture",
+          "type": "SubmitEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onInvalid",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onInvalidCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoad",
+          "type": "(e: React.SyntheticEvent<HTMLImageElement>) => void",
+          "required": false
+        },
+        {
+          "name": "onLoadCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onError",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onErrorCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyDown",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyDownCapture",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyPress",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyPressCapture",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyUp",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onKeyUpCapture",
+          "type": "KeyboardEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAbort",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAbortCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCanPlay",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCanPlayCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCanPlayThrough",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onCanPlayThroughCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDurationChange",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDurationChangeCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEmptied",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEmptiedCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEncrypted",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEncryptedCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEnded",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onEndedCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadedData",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadedDataCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadedMetadata",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadedMetadataCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadStart",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLoadStartCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPause",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPauseCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPlay",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPlayCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPlaying",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPlayingCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onProgress",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onProgressCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onRateChange",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onRateChangeCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSeeked",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSeekedCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSeeking",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSeekingCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onStalled",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onStalledCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSuspend",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSuspendCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTimeUpdate",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTimeUpdateCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onVolumeChange",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onVolumeChangeCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onWaiting",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onWaitingCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAuxClick",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAuxClickCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onClick",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onClickCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onContextMenu",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onContextMenuCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDoubleClick",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDoubleClickCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDrag",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragEnd",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragEndCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragEnter",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragEnterCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragExit",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragExitCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragLeave",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragLeaveCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragOver",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragOverCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragStart",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDragStartCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDrop",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onDropCapture",
+          "type": "DragEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseDown",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseDownCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseEnter",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseLeave",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseMove",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseMoveCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseOut",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseOutCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseOver",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseOverCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseUp",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onMouseUpCapture",
+          "type": "MouseEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSelect",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onSelectCapture",
+          "type": "ReactEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchCancel",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchCancelCapture",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchEnd",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchEndCapture",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchMove",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchMoveCapture",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchStart",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTouchStartCapture",
+          "type": "TouchEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerDown",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerDownCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerMove",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerMoveCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerUp",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerUpCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerCancel",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerCancelCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerEnter",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerLeave",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerOver",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerOverCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerOut",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onPointerOutCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onGotPointerCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onGotPointerCaptureCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLostPointerCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onLostPointerCaptureCapture",
+          "type": "PointerEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onScroll",
+          "type": "UIEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onScrollCapture",
+          "type": "UIEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onScrollEnd",
+          "type": "UIEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onScrollEndCapture",
+          "type": "UIEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onWheel",
+          "type": "WheelEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onWheelCapture",
+          "type": "WheelEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationStart",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationStartCapture",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationEnd",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationEndCapture",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationIteration",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onAnimationIterationCapture",
+          "type": "AnimationEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onToggle",
+          "type": "ToggleEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onBeforeToggle",
+          "type": "ToggleEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionCancel",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionCancelCapture",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionEnd",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionEndCapture",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionRun",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionRunCapture",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionStart",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "onTransitionStartCapture",
+          "type": "TransitionEventHandler<T> | undefined",
+          "required": false
+        },
+        {
+          "name": "fill",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "loader",
+          "type": "(p: { src: string; width: number; quality?: number }) => string",
+          "required": false
+        },
+        {
+          "name": "quality",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "priority",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "\"blur\" | \"empty\"",
+          "required": false
+        },
+        {
+          "name": "blurDataURL",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "suffix",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "ratio",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "media",
+          "type": "{ mediaId?: string; name?: string; width?: number; height?: number; }",
+          "required": false
+        },
+        {
+          "name": "gravity",
+          "type": "{ mode?: string; coordinates?: { x?: number; y?: number }; }",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ImageProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<Image media{/* media: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "InfoTooltip",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/info-tooltip",
+      "importFromBarrel": "import { InfoTooltip } from '@scaffold';",
+      "props": [
+        {
+          "name": "content",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "React.ComponentType",
+          "required": false
+        },
+        {
+          "name": "iconWidth",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "iconHeight",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "InfoTooltipProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "React.ComponentProps<typeof Tooltip>"
+      ],
+      "example": "<InfoTooltip content=\"I'm a tooltip!\" place='top-end'>Hover me!</InfoTooltip>",
+      "notes": []
+    },
+    {
+      "name": "Input",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/input",
+      "importFromBarrel": "import { Input } from '@scaffold';",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "clearButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onClear",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "outerContainerClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "unStyled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "focusOnMount",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "InputProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "React.ComponentProps<'input'>",
+        "Pick<LabelProps, 'requiredStyle' | 'showOptionalLabel' | 'optionalLabel'>"
+      ],
+      "example": "<Input disabled={true} value='Label' />",
+      "notes": []
+    },
+    {
+      "name": "Label",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/label",
+      "importFromBarrel": "import { Label } from '@scaffold';",
+      "props": [
+        {
+          "name": "required",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "requiredStyle",
+          "type": "'asterisk' | 'label'",
+          "required": false
+        },
+        {
+          "name": "showOptionalLabel",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "optionalLabel",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "LabelProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Label>Label</Label>",
+      "notes": []
+    },
+    {
+      "name": "Link",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/link",
+      "importFromBarrel": "import { Link } from '@scaffold';",
+      "props": [
+        {
+          "name": "openInNewTab",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "chevron",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "underlineOnHover",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "locale",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "LinkProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "React.ComponentProps<typeof NextLink>"
+      ],
+      "example": "<Link href='#' openInNewTab={false}>Click Me!</Link>",
+      "notes": []
+    },
+    {
+      "name": "LoadingIcon",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/loading-icon",
+      "importFromBarrel": "import { LoadingIcon } from '@scaffold';",
+      "props": [
+        {
+          "name": "svgWidth",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "svgHeight",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "LoadingIconProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Markdown",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/markdown",
+      "importFromBarrel": "import { Markdown } from '@scaffold';",
+      "props": [
+        {
+          "name": "children",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "MarkdownProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Markdown>\\n**Automotive Trends in 2023**\\n*Automotive trends are evolving to meet our changing needs and desires. With a growing emphasis on driver and passenger safety, automakers are technologies such as collision warning systems, automatic braking, and adaptive cruise control.*\\n</Markdown>",
+      "notes": []
+    },
+    {
+      "name": "MultiDropdown",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/multi-dropdown",
+      "importFromBarrel": "import { MultiDropdown } from '@scaffold';",
+      "props": [
+        {
+          "name": "size",
+          "type": "'sm' | 'lg'",
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string[]",
+          "required": false
+        },
+        {
+          "name": "defaultValue",
+          "type": "string[]",
+          "required": false
+        },
+        {
+          "name": "onChange",
+          "type": "(value: string[]) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "MultiDropdownProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<MultiDropdown />",
+      "notes": []
+    },
+    {
+      "name": "MultiSelect",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/multi-select",
+      "importFromBarrel": "import { MultiSelect } from '@scaffold';",
+      "props": [
+        {
+          "name": "menuTop",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "enableSearch",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "MultiSelectProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "DropdownProps",
+        "LabelProps"
+      ],
+      "example": "<MultiSelect placeholder='Select' />",
+      "notes": []
+    },
+    {
+      "name": "Overlay",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/overlay",
+      "importFromBarrel": "import { Overlay } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "zIndex",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "onClick",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "OverlayProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "PasswordInput",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/password-input",
+      "importFromBarrel": "import { PasswordInput } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<PasswordInput required={true} />",
+      "notes": [
+        "No PasswordInputProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "QuantityWidget",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/quantity-widget",
+      "importFromBarrel": "import { QuantityWidget } from '@scaffold';",
+      "props": [
+        {
+          "name": "showLabel",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "defaultValue",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "minValue",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "maxValue",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "onChange",
+          "type": "(val: number) => void",
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "QuantityWidgetProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Radio",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/radio",
+      "importFromBarrel": "import { Radio } from '@scaffold';",
+      "props": [
+        {
+          "name": "size",
+          "type": "'sm' | 'lg'",
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "ReactNode",
+          "required": false
+        },
+        {
+          "name": "onSelected",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "RadioProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "Omit<React.ComponentProps<'input'>, 'size'>"
+      ],
+      "example": "<Radio label='Text' />",
+      "notes": []
+    },
+    {
+      "name": "SearchInput",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/search-input",
+      "importFromBarrel": "import { SearchInput } from '@scaffold';",
+      "props": [
+        {
+          "name": "ref",
+          "type": "React.ForwardedRef<HTMLInputElement | null>",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "'xs' | 'sm' | 'lg'",
+          "required": true
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "searchValue",
+          "type": "string | readonly string[] | undefined",
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "mobile",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "focused",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onFocus",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "onBlur",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "onBackClick",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "handleOnChange",
+          "type": "(value: string) => void",
+          "required": false
+        },
+        {
+          "name": "handleSearchAction",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SearchInputProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<SearchInput label='Filter Search' variant='xs' placeholder='Search...' />",
+      "notes": []
+    },
+    {
+      "name": "Select",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/select",
+      "importFromBarrel": "import { Select } from '@scaffold';",
+      "props": [
+        {
+          "name": "menuTop",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "enableSearch",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SelectProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "DropdownProps",
+        "LabelProps"
+      ],
+      "example": "<Select placeholder='Select' />",
+      "notes": []
+    },
+    {
+      "name": "Skeleton",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/skeleton",
+      "importFromBarrel": "import { Skeleton } from '@scaffold';",
+      "props": [
+        {
+          "name": "count",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "string | number",
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "string | number",
+          "required": false
+        },
+        {
+          "name": "circle",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "style",
+          "type": "React.CSSProperties",
+          "required": false
+        },
+        {
+          "name": "fillMode",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SkeletonProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<Skeleton count={4} />",
+      "notes": []
+    },
+    {
+      "name": "Spacer",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/spacer",
+      "importFromBarrel": "import { Spacer } from '@scaffold';",
+      "props": [
+        {
+          "name": "bgColor",
+          "type": "'white' | 'neutral-200'",
+          "required": false
+        },
+        {
+          "name": "space",
+          "type": "number | string",
+          "required": true
+        }
+      ],
+      "propsTypeName": "SpacerProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Spacer bgColor='neutral-200' space={24} />",
+      "notes": []
+    },
+    {
+      "name": "StockIndicator",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/stock-indicator",
+      "importFromBarrel": "import { StockIndicator } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<StockIndicator inStock={true} />",
+      "notes": [
+        "No StockIndicatorProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "Tag",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/tag",
+      "importFromBarrel": "import { Tag } from '@scaffold';",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'primary' | 'secondary' | 'warning' | 'danger' | 'success'",
+          "required": true
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "TagProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Tag variant='primary'>Returned</Tag>",
+      "notes": []
+    },
+    {
+      "name": "TextArea",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/text-area",
+      "importFromBarrel": "import { TextArea } from '@scaffold';",
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "valid",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "fitContent",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "TextAreaProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "React.ComponentProps<'textarea'>",
+        "Pick<LabelProps, 'requiredStyle' | 'showOptionalLabel'>"
+      ],
+      "example": "<TextArea disabled={true} value='Description' />",
+      "notes": []
+    },
+    {
+      "name": "Toaster",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/toaster",
+      "importFromBarrel": "import { Toaster } from '@scaffold';",
+      "props": [
+        {
+          "name": "0",
+          "type": "import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant",
+          "required": true
+        },
+        {
+          "name": "1",
+          "type": "import(\"react-hot-toast\").ToastOptions",
+          "required": false
+        },
+        {
+          "name": "length",
+          "type": "2",
+          "required": true
+        },
+        {
+          "name": "toString",
+          "type": "() => string",
+          "required": true
+        },
+        {
+          "name": "toLocaleString",
+          "type": "{ (): string; (locales: string | string[], options?: (Intl.NumberFormatOptions & Intl.DateTimeFormatOptions) | undefined): string; }",
+          "required": true
+        },
+        {
+          "name": "pop",
+          "type": "() => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions",
+          "required": false
+        },
+        {
+          "name": "push",
+          "type": "(...items: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => number",
+          "required": true
+        },
+        {
+          "name": "concat",
+          "type": "{ (...items: ConcatArray<import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined>[]): (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]; (...items: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | ConcatArray<import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined> | undefined)[]): (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]; }",
+          "required": true
+        },
+        {
+          "name": "join",
+          "type": "(separator?: string | undefined) => string",
+          "required": true
+        },
+        {
+          "name": "reverse",
+          "type": "() => (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]",
+          "required": true
+        },
+        {
+          "name": "shift",
+          "type": "() => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions",
+          "required": false
+        },
+        {
+          "name": "slice",
+          "type": "(start?: number | undefined, end?: number | undefined) => (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]",
+          "required": true
+        },
+        {
+          "name": "sort",
+          "type": "(compareFn?: ((a: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, b: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined) => number) | undefined) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").CommonProps",
+          "required": true
+        },
+        {
+          "name": "splice",
+          "type": "{ (start: number, deleteCount?: number | undefined): (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]; (start: number, deleteCount: number, ...items: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]): (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]; }",
+          "required": true
+        },
+        {
+          "name": "unshift",
+          "type": "(...items: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => number",
+          "required": true
+        },
+        {
+          "name": "indexOf",
+          "type": "(searchElement: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, fromIndex?: number | undefined) => number",
+          "required": true
+        },
+        {
+          "name": "lastIndexOf",
+          "type": "(searchElement: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, fromIndex?: number | undefined) => number",
+          "required": true
+        },
+        {
+          "name": "every",
+          "type": "{ <S>(predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => value is S, thisArg?: any): this is S[]; (predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => unknown, thisArg?: any): boolean; }",
+          "required": true
+        },
+        {
+          "name": "some",
+          "type": "(predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => unknown, thisArg?: any) => boolean",
+          "required": true
+        },
+        {
+          "name": "forEach",
+          "type": "(callbackfn: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => void, thisArg?: any) => void",
+          "required": true
+        },
+        {
+          "name": "map",
+          "type": "<U>(callbackfn: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => U, thisArg?: any) => U[]",
+          "required": true
+        },
+        {
+          "name": "filter",
+          "type": "{ <S>(predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => value is S, thisArg?: any): S[]; (predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => unknown, thisArg?: any): (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]; }",
+          "required": true
+        },
+        {
+          "name": "reduce",
+          "type": "{ (callbackfn: (previousValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined): import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined; (callbackfn: (previousValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, initialValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined): import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined; <U>(callbackfn: (previousValue: U, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => U, initialValue: U): U; }",
+          "required": true
+        },
+        {
+          "name": "reduceRight",
+          "type": "{ (callbackfn: (previousValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined): import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined; (callbackfn: (previousValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, initialValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined): import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined; <U>(callbackfn: (previousValue: U, currentValue: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, currentIndex: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => U, initialValue: U): U; }",
+          "required": true
+        },
+        {
+          "name": "find",
+          "type": "{ <S>(predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, obj: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => value is S, thisArg?: any): S | undefined; (predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, obj: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => unknown, thisArg?: any): import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined; }",
+          "required": true
+        },
+        {
+          "name": "findIndex",
+          "type": "(predicate: (value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, obj: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => unknown, thisArg?: any) => number",
+          "required": true
+        },
+        {
+          "name": "fill",
+          "type": "(value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, start?: number | undefined, end?: number | undefined) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").CommonProps",
+          "required": true
+        },
+        {
+          "name": "copyWithin",
+          "type": "(target: number, start: number, end?: number | undefined) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").CommonProps",
+          "required": true
+        },
+        {
+          "name": "entries",
+          "type": "() => ArrayIterator<[number, import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined]>",
+          "required": true
+        },
+        {
+          "name": "keys",
+          "type": "() => ArrayIterator<number>",
+          "required": true
+        },
+        {
+          "name": "values",
+          "type": "() => ArrayIterator<import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined>",
+          "required": true
+        },
+        {
+          "name": "includes",
+          "type": "(searchElement: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, fromIndex?: number | undefined) => boolean",
+          "required": true
+        },
+        {
+          "name": "flatMap",
+          "type": "<U, This>(callback: (this: This, value: import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined, index: number, array: (import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions | undefined)[]) => U | readonly U[], thisArg?: This | undefined) => U[]",
+          "required": true
+        },
+        {
+          "name": "flat",
+          "type": "<A, D>(this: A, depth?: D | undefined) => FlatArray<A, D>[]",
+          "required": true
+        },
+        {
+          "name": "at",
+          "type": "(index: number) => import(\"/Users/cmoll/octolog-prototypes/packages/launchpad/src/components/scaffold/atoms/toaster/types/index\").ToastVariant | import(\"react-hot-toast\").ToastOptions",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ToasterProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<Toaster onClick={() => toast.info('This is an info message')} />",
+      "notes": []
+    },
+    {
+      "name": "Toggle",
+      "category": "atom",
+      "componentDir": "src/components/scaffold/atoms/toggle",
+      "importFromBarrel": "import { Toggle } from '@scaffold';",
+      "props": [
+        {
+          "name": "label",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "defaultChecked",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onChange",
+          "type": "(checked: boolean) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ToggleProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Toggle label='Set as active' />",
+      "notes": []
+    },
+    {
+      "name": "Accordion",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/accordion",
+      "importFromBarrel": "import { Accordion } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "AccordionProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "AccordionProviderProps"
+      ],
+      "example": "<Accordion />",
+      "notes": []
+    },
+    {
+      "name": "ActivityLog",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/activity-log",
+      "importFromBarrel": "import { ActivityLog } from '@scaffold';",
+      "props": [
+        {
+          "name": "activities",
+          "type": "ActivityLog[]",
+          "required": true
+        },
+        {
+          "name": "translations",
+          "type": "{ accept?: string; decline?: string; cancel?: string; send?: string; }",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ActivityLogProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ActivityLog activities{/* activities: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "AddedToCartModal",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/added-to-cart-modal",
+      "importFromBarrel": "import { AddedToCartModal } from '@scaffold';",
+      "props": [
+        {
+          "name": "item",
+          "type": "Product",
+          "required": true
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": true
+        },
+        {
+          "name": "onQuantityChange",
+          "type": "(amount: number) => void",
+          "required": true
+        },
+        {
+          "name": "sliderProducts",
+          "type": "Product[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "AddedToCartModalProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<AddedToCartModal item={sliderItems[0]} sliderProducts={sliderItems} />",
+      "notes": []
+    },
+    {
+      "name": "AddressForm",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/address-form",
+      "importFromBarrel": "import { AddressForm } from '@scaffold';",
+      "props": [
+        {
+          "name": "translations",
+          "type": "{ submit?: string; cancel?: string; }",
+          "required": false
+        },
+        {
+          "name": "toasters",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "unstyled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "countryOptions",
+          "type": "(Option & { states: Option[] })[]",
+          "required": true
+        },
+        {
+          "name": "addresses",
+          "type": "Address[]",
+          "required": true
+        },
+        {
+          "name": "showPhoneField",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "showCancelButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "showSubmitButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "showDefaultCheckBoxes",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onAddAddress",
+          "type": "(address: Address) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onUpdateAddress",
+          "type": "(address: Partial<Address>) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onSave",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "onCancel",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "AddressFormProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Banner",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/banner",
+      "importFromBarrel": "import { Banner } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "buttonText",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "buttonLink",
+          "type": "Reference",
+          "required": false
+        },
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "'sm' | 'md' | 'lg'",
+          "required": false
+        }
+      ],
+      "propsTypeName": "BannerProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Banner title='Lorem ipsum dolor sit amet consec tetur ' description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' buttonText='Button text' buttonLink={{ type: 'link', link: '#' }} image={{ src: '/sb-assets/category-banner.png', alt: '' }} size='md' />",
+      "notes": []
+    },
+    {
+      "name": "Blog",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/blog",
+      "importFromBarrel": "import { Blog } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "Image",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": true
+        }
+      ],
+      "propsTypeName": "BlogProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Breadcrumb",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/breadcrumb",
+      "importFromBarrel": "import { Breadcrumb } from '@scaffold';",
+      "props": [
+        {
+          "name": "Separator",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "maxItems",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "propsTypeName": "BreadcrumbProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Breadcrumb Separator='|'>{categoryElements}</Breadcrumb>",
+      "notes": []
+    },
+    {
+      "name": "Card",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/card",
+      "importFromBarrel": "import { Card } from '@scaffold';",
+      "props": [
+        {
+          "name": "icon",
+          "type": "ReactElement<Record<string, any>>",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "summary",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "CardProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Card icon={<QuotesIcon />} title='Quotes' summary='Check and manage the status of quote-requests' />",
+      "notes": []
+    },
+    {
+      "name": "ContentItem",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/content-item",
+      "importFromBarrel": "import { ContentItem } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "imageSizes",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'inline'",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ContentItemProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ContentItem bg='bg-neutral-200' variant='default' image={{\n    src: './sb-assets/engine.png',\n  }} title='Engine' />",
+      "notes": []
+    },
+    {
+      "name": "ContentTile",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/content-tile",
+      "importFromBarrel": "import { ContentTile } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": false
+        },
+        {
+          "name": "image",
+          "type": "Image",
+          "required": false
+        },
+        {
+          "name": "imageSizes",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ContentTileProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ContentTile title='Hybrid battery systems' link={{\n    name: 'Read more',\n  }} image={{\n    src: '/sb-assets/car-front.png',\n  }} />",
+      "notes": []
+    },
+    {
+      "name": "Costs",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/costs",
+      "importFromBarrel": "import { Costs } from '@scaffold';",
+      "props": [
+        {
+          "name": "subtotal",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "discount",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "tax",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "shipping",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "isShippingEstimated",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "currency",
+          "type": "'AED' | 'AFN' | 'ALL' | 'AMD' | 'ANG' | 'AOA' | 'ARS' | 'AUD' | 'AWG' | 'AZN' | 'BAM' | 'BBD' | 'BDT' | 'BGN' | 'BHD' | 'BIF' | 'BMD' | 'BND' | 'BOB' | 'BRL' | 'BSD' | 'BTN' | 'BWP' | 'BYR' | 'BZD' | 'CAD' | 'CDF' | 'CHF' | 'CLP' | 'CNY' | 'COP' | 'CRC' | 'CUC' | 'CUP' | 'CVE' | 'CZK' | 'DJF' | 'DKK' | 'DOP' | 'DZD' | 'EGP' | 'ERN' | 'ETB' | 'EUR' | 'FJD' | 'FKP' | 'GBP' | 'GEL' | 'GGP' | 'GHS' | 'GIP' | 'GMD' | 'GNF' | 'GTQ' | 'GYD' | 'HKD' | 'HNL' | 'HRK' | 'HTG' | 'HUF' | 'IDR' | 'ILS' | 'IMP' | 'INR' | 'IQD' | 'IRR' | 'ISK' | 'JEP' | 'JMD' | 'JOD' | 'JPY' | 'KES' | 'KGS' | 'KHR' | 'KMF' | 'KPW' | 'KRW' | 'KWD' | 'KYD' | 'KZT' | 'LAK' | 'LBP' | 'LKR' | 'LRD' | 'LSL' | 'LYD' | 'MAD' | 'MDL' | 'MGA' | 'MKD' | 'MMK' | 'MNT' | 'MOP' | 'MRO' | 'MUR' | 'MVR' | 'MWK' | 'MXN' | 'MYR' | 'MZN' | 'NAD' | 'NGN' | 'NIO' | 'NOK' | 'NPR' | 'NZD' | 'OMR' | 'PAB' | 'PEN' | 'PGK' | 'PHP' | 'PKR' | 'PLN' | 'PYG' | 'QAR' | 'RON' | 'RSD' | 'RUB' | 'RWF' | 'SAR' | 'SBD' | 'SCR' | 'SDG' | 'SEK' | 'SGD' | 'SHP' | 'SLL' | 'SOS' | 'SPL' | 'SRD' | 'STD' | 'SVC' | 'SYP' | 'SZL' | 'THB' | 'TJS' | 'TMT' | 'TND' | 'TOP' | 'TRY' | 'TTD' | 'TVD' | 'TWD' | 'TZS' | 'UAH' | 'UGX' | 'USD' | 'UYU' | 'UZS' | 'VEF' | 'VND' | 'VUV' | 'WST' | 'XAF' | 'XCD' | 'XDR' | 'XOF' | 'XPF' | 'YER' | 'ZAR' | 'ZMW' | 'ZWD'",
+          "required": true
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "{ container?: string; totalAmount?: string; subCostsContainer?: string; subCosts?: string; }",
+          "required": false
+        }
+      ],
+      "propsTypeName": "CostsProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "DatePicker",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/date-picker",
+      "importFromBarrel": "import { DatePicker } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<DatePicker />",
+      "notes": [
+        "No DatePickerProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "DatePickerInput",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/date-picker-input",
+      "importFromBarrel": "import { DatePickerInput } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No DatePickerInputProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "DiscountsForm",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/discounts-form",
+      "importFromBarrel": "import { DiscountsForm } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "discounts",
+          "type": "Array<Discount & { onRemove?: () => Promise<boolean> }>",
+          "required": true
+        },
+        {
+          "name": "onSubmit",
+          "type": "(code: string) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "customError",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "DiscountsFormProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "EmptyState",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/empty-state",
+      "importFromBarrel": "import { EmptyState } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "header",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "image",
+          "type": "React.ReactNode",
+          "required": false
+        },
+        {
+          "name": "isLoading",
+          "type": "boolean",
+          "required": false
+        }
+      ],
+      "propsTypeName": "EmptyStateProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "InfoBanner",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/info-banner",
+      "importFromBarrel": "import { InfoBanner } from '@scaffold';",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'primary' | 'warning'",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "InfoBannerProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<InfoBanner>{(\n    <>\n      <b>View-Only</b> For full permissions, please contact your company administrator.\n    </>\n  )}</InfoBanner>",
+      "notes": []
+    },
+    {
+      "name": "MoveToList",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/move-to-list",
+      "importFromBarrel": "import { MoveToList } from '@scaffold';",
+      "props": [
+        {
+          "name": "lists",
+          "type": "{ label: string; id: string }[]",
+          "required": true
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onSubmit",
+          "type": "(selected: string[]) => Promise<void>",
+          "required": false
+        },
+        {
+          "name": "onAddNewList",
+          "type": "(list: Pick<PurchaseList, 'name' | 'description' | 'store'>) => Promise<Wishlist | null>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "MoveToListProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<MoveToList />",
+      "notes": []
+    },
+    {
+      "name": "Popover",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/popover",
+      "importFromBarrel": "import { Popover } from '@scaffold';",
+      "props": [
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right'",
+          "required": true
+        },
+        {
+          "name": "buttonElement",
+          "type": "() => React.JSX.Element",
+          "required": true
+        }
+      ],
+      "propsTypeName": "PopoverProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "ProductAttributes",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/product-attributes",
+      "importFromBarrel": "import { ProductAttributes } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "attributes",
+          "type": "Attribute[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ProductAttributesProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "ProductTile",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/product-tile",
+      "importFromBarrel": "import { ProductTile } from '@scaffold';",
+      "props": [
+        {
+          "name": "item",
+          "type": "Product",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'grid-item' | 'list-item'",
+          "required": false
+        },
+        {
+          "name": "addToCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onAddToCart",
+          "type": "(qty: number) => Promise<void>",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ProductTileProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ProductTile variant='grid-item' />",
+      "notes": []
+    },
+    {
+      "name": "PurchaseListItem",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/purchase-list-item",
+      "importFromBarrel": "import { PurchaseListItem } from '@scaffold';",
+      "props": [
+        {
+          "name": "item",
+          "type": "PurchaseListItem",
+          "required": true
+        },
+        {
+          "name": "onRemove",
+          "type": "() => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onAddToCart",
+          "type": "() => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onQuantityChange",
+          "type": "(qty: number) => Promise<boolean>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "PurchaseListItemProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<PurchaseListItem item={{ ...item, maxQuantity: 10 }} />",
+      "notes": []
+    },
+    {
+      "name": "SectionHeader",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/section-header",
+      "importFromBarrel": "import { SectionHeader } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SectionHeaderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<SectionHeader title='Product Categories' link={{\n    name: 'All categories',\n  }} />",
+      "notes": []
+    },
+    {
+      "name": "ShowMore",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/show-more",
+      "importFromBarrel": "import { ShowMore } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "renderLabel",
+          "type": "(props: { isShowingAll: boolean }) => React.ReactNode",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ShowMoreProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ShowMore>{(\n    <>\n      <p>Part Number - 770035A</p>\n      <p>Weight - 563 gram</p>\n    </>\n  )}</ShowMore>",
+      "notes": []
+    },
+    {
+      "name": "Timeline",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/timeline",
+      "importFromBarrel": "import { Timeline } from '@scaffold';",
+      "props": [
+        {
+          "name": "activeIndex",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "{ track?: string; trackActive?: string; bullet?: string; bulletActive?: string; }",
+          "required": false
+        }
+      ],
+      "propsTypeName": "TimelineProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Timeline activeIndex={0} classNames{/* classNames: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "VerticalSlider",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/vertical-slider",
+      "importFromBarrel": "import { VerticalSlider } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No VerticalSliderProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "WishlistModal",
+      "category": "molecule",
+      "componentDir": "src/components/scaffold/molecules/wishlist-modal",
+      "importFromBarrel": "import { WishlistModal } from '@scaffold';",
+      "props": [
+        {
+          "name": "lists",
+          "type": "Array<Wishlist>",
+          "required": true
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "onSubmit",
+          "type": "(lists: Array<Wishlist>) => void",
+          "required": true
+        },
+        {
+          "name": "selectedIds",
+          "type": "string[]",
+          "required": true
+        },
+        {
+          "name": "handleChange",
+          "type": "(id: string, checked: boolean) => void",
+          "required": true
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": true
+        },
+        {
+          "name": "onAddToNewList",
+          "type": "( list: Pick<PurchaseList, 'name' | 'description' | 'store'>, count?: number, sku?: string, ) => Promise<SharedWishlist | null>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "WishlistModalProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "AnnouncementBar",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/announcement-bar",
+      "importFromBarrel": "import { AnnouncementBar } from '@scaffold';",
+      "props": [
+        {
+          "name": "accountLinks",
+          "type": "NavigationCategory[]",
+          "required": true
+        },
+        {
+          "name": "textBar",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "selectedBusinessUnit",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "businessUnitIsLoading",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "businessUnits",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "selectedStore",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "stores",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "quotes",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "onLogoutClick",
+          "type": "() => void",
+          "required": true
+        },
+        {
+          "name": "onBusinessUnitChange",
+          "type": "(businessUnit: string) => void",
+          "required": false
+        },
+        {
+          "name": "onStoreChange",
+          "type": "(store: string) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "AnnouncementBarProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<AnnouncementBar name='Erika' onLogoutClick={() => {}} textBar='Worldwide shipping & returns *' quotes={4} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} accountLinks{/* accountLinks: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "AuthForm",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { AuthForm } from '@scaffold';",
+      "props": [
+        {
+          "name": "includeCheckIcon",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "error",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "subtitleLink",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "subtitleLinkLabel",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "buttonLabel",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "footerLabel",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "footerLink",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "footerOnClick",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "footerLinkLabel",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "onSubmit",
+          "type": "() => void",
+          "required": true
+        }
+      ],
+      "propsTypeName": "AuthFormProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "AuthLayout",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { AuthLayout } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        }
+      ],
+      "propsTypeName": "AuthLayoutProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Cart",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/cart",
+      "importFromBarrel": "import { Cart } from '@scaffold';",
+      "props": [
+        {
+          "name": "loading",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "lineItems",
+          "type": "ProductWithDeleteAttr[]",
+          "required": true
+        },
+        {
+          "name": "account",
+          "type": "Pick<Account, 'email'>",
+          "required": true
+        },
+        {
+          "name": "paymentMethods",
+          "type": "Array<PaymentMethod>",
+          "required": true
+        },
+        {
+          "name": "viewCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "quoteRequestDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "checkoutDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "invalidAddressesRequirements",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "discountCodes",
+          "type": "Array<Discount & { onRemove?: () => Promise<boolean> }>",
+          "required": true
+        },
+        {
+          "name": "onAdd",
+          "type": "(sku: string, qty: number) => Promise<void>",
+          "required": true
+        },
+        {
+          "name": "onRemove",
+          "type": "(id: string) => Promise<void>",
+          "required": true
+        },
+        {
+          "name": "onUpdateQuantity",
+          "type": "(id: string, qty: number) => Promise<void>",
+          "required": true
+        },
+        {
+          "name": "onDiscountRedeem",
+          "type": "(code: string) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onClear",
+          "type": "() => Promise<void>",
+          "required": false
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction",
+          "required": false
+        },
+        {
+          "name": "onAddToNewWishlist",
+          "type": "( list: Pick<PurchaseList, 'name' | 'description' | 'store'>, sku?: string, qty?: number, ) => Promise<Wishlist | null>",
+          "required": true
+        }
+      ],
+      "propsTypeName": "CartProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<Cart />",
+      "notes": []
+    },
+    {
+      "name": "Checkout",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/checkout",
+      "importFromBarrel": "import { Checkout } from '@scaffold';",
+      "props": [
+        {
+          "name": "buyerCanAddComment",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "enableCtCheckout",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "addresses",
+          "type": "Address[]",
+          "required": true
+        },
+        {
+          "name": "onAddAddress",
+          "type": "(address: Address) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "products",
+          "type": "Array<Pick<Product, 'id' | 'name' | 'currency' | 'price' | 'quantity' | 'images' | 'url'>>",
+          "required": true
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction",
+          "required": true
+        },
+        {
+          "name": "discounts",
+          "type": "Array<Discount & { onRemove?: () => Promise<boolean> }>",
+          "required": true
+        },
+        {
+          "name": "onApplyDiscount",
+          "type": "(code: string) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "countryOptions",
+          "type": "Array<Option & { states: Array<Option> }>",
+          "required": true
+        },
+        {
+          "name": "onCompleteAddresses",
+          "type": "(shippingAddress: Address, billingAddress: Address) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "termsAndConditionsLink",
+          "type": "Link",
+          "required": false
+        },
+        {
+          "name": "initialData",
+          "type": "InitialData",
+          "required": true
+        },
+        {
+          "name": "shippingMethods",
+          "type": "ShippingMethod[]",
+          "required": true
+        },
+        {
+          "name": "onCompleteShipping",
+          "type": "(shippingMethodId: string) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "paymentMethods",
+          "type": "PaymentMethod[]",
+          "required": true
+        },
+        {
+          "name": "onCompletePayment",
+          "type": "(paymentMethodId: string, data: unknown) => Promise<boolean>",
+          "required": false
+        },
+        {
+          "name": "onSubmitPurchase",
+          "type": "(paylaod: SubmitPurchasePayload) => Promise<boolean>",
+          "required": true
+        },
+        {
+          "name": "translations",
+          "type": "{ header?: string; orderSummaryTitle?: string; orderSummarySubtitle?: string; purchase?: string; review?: string; }",
+          "required": false
+        }
+      ],
+      "propsTypeName": "CheckoutProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Checkout />",
+      "notes": []
+    },
+    {
+      "name": "Confirmation",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/confirmation",
+      "importFromBarrel": "import { Confirmation } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "translations",
+          "type": "{ title?: string; summary?: string; confirm?: string; cancel?: string; }",
+          "required": true
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onConfirm",
+          "type": "() => Promise<void>",
+          "required": false
+        },
+        {
+          "name": "onCancel",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ConfirmationProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Confirmation translations{/* translations: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "ContentItems",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/content-items",
+      "importFromBarrel": "import { ContentItems } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "items",
+          "type": "Item[]",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'inline'",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ContentItemsProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ContentItems variant='default' title='Product Categories' link={{\n    name: 'All categories',\n  }} items{/* items: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "ContentSlider",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/content-slider",
+      "importFromBarrel": "import { ContentSlider } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "Item[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ContentSliderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ContentSlider title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items{/* items: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "ContentTiles",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/content-tiles",
+      "importFromBarrel": "import { ContentTiles } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "Link",
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "Item[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ContentTilesProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ContentTiles title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items{/* items: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "Drawer",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/drawer",
+      "importFromBarrel": "import { Drawer } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "headerClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "overlay",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "direction",
+          "type": "'left' | 'right'",
+          "required": true
+        },
+        {
+          "name": "blockScrolling",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onClose",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "DrawerProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "EntityForm",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/entity-form",
+      "importFromBarrel": "import { EntityForm } from '@scaffold';",
+      "props": [
+        {
+          "name": "translations",
+          "type": "{ submit?: string; cancel?: string; }",
+          "required": true
+        },
+        {
+          "name": "unstyled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "{ form?: string; buttonsContainer?: string; }",
+          "required": false
+        },
+        {
+          "name": "showCancelButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "showSubmitButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onCancel",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "onSubmit",
+          "type": "() => Promise<void>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "EntityFormProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<EntityForm translations={{\n    cancel: 'Cancel',\n    submit: 'Save',\n  }}>{(\n    <div className=\"flex flex-col gap-4\">\n      <Input className=\"w-[400px]\" label=\"Name\" defaultValue=\"commercetools\" />\n      <Input className=\"w-[400px]\" label=\"Email\" defaultValue=\"123@commercetools.com\" />\n      <Input className=\"w-[400px]\" label=\"Country\" showOptionalLabel />\n      <Input className=\"w-[400px]\" label=\"VAT Number\" showOptionalLabel />\n    </div>\n  )}</EntityForm>",
+      "notes": []
+    },
+    {
+      "name": "Footer",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/footer",
+      "importFromBarrel": "import { Footer } from '@scaffold';",
+      "props": [
+        {
+          "name": "links",
+          "type": "Link[]",
+          "required": false
+        },
+        {
+          "name": "copyrightStatement",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'simple'",
+          "required": false
+        }
+      ],
+      "propsTypeName": "FooterProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Footer variant='default' links{/* links: see source */} copyrightStatement='© Powered by commercetools' />",
+      "notes": []
+    },
+    {
+      "name": "Gallery",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/gallery",
+      "importFromBarrel": "import { Gallery } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "images",
+          "type": "string[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "GalleryProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Header",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/header",
+      "importFromBarrel": "import { Header } from '@scaffold';",
+      "props": [
+        {
+          "name": "variant",
+          "type": "'account' | 'navigation' | 'checkout'",
+          "required": true
+        },
+        {
+          "name": "isAdmin",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "myAccountMenu",
+          "type": "NavigationCategory",
+          "required": true
+        },
+        {
+          "name": "cartItems",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "cartLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "accountLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "pageLinks",
+          "type": "Link[]",
+          "required": true
+        },
+        {
+          "name": "categoryLinks",
+          "type": "NavigationCategory[]",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "LogoImage",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "selectedBusinessUnit",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "businessUnits",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "selectedStore",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "stores",
+          "type": "Option[]",
+          "required": true
+        },
+        {
+          "name": "searchSuggestions",
+          "type": "ProductSuggestion[]",
+          "required": true
+        },
+        {
+          "name": "quickOrderProducts",
+          "type": "ProductSuggestion[]",
+          "required": true
+        },
+        {
+          "name": "searchPlaceholder",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "quotes",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "csvDownloadLink",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "quickOrderSearch",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "headerSearch",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "csvShowProducts",
+          "type": "CsvProduct[]",
+          "required": true
+        },
+        {
+          "name": "csvShowProductsLoading",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "addToCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onBusinessUnitChange",
+          "type": "(businessUnit: string) => void",
+          "required": false
+        },
+        {
+          "name": "onStoreChange",
+          "type": "(store: string) => void",
+          "required": false
+        },
+        {
+          "name": "onQuickOrderSearch",
+          "type": "(value: string) => void",
+          "required": false
+        },
+        {
+          "name": "onHeaderSearch",
+          "type": "(value: string) => void",
+          "required": false
+        },
+        {
+          "name": "onHeaderSearchAction",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "handleSKUsUpdate",
+          "type": "(skus: string[]) => void",
+          "required": false
+        },
+        {
+          "name": "addToCart",
+          "type": "( lineItems: { sku: string; count: number; }[], ) => Promise<object>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "HeaderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Header variant='navigation' pageLinks{/* pageLinks: see source */} myAccountMenu{/* myAccountMenu: see source */} categoryLinks{/* categoryLinks: see source */} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts{/* quickOrderProducts: see source */} csvDownloadLink='/template.csv' />",
+      "notes": []
+    },
+    {
+      "name": "HeroTile",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/hero-tile",
+      "importFromBarrel": "import { HeroTile } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "Image",
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "links",
+          "type": "Link[]",
+          "required": false
+        },
+        {
+          "name": "isPriority",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "imageQuality",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "propsTypeName": "HeroTileProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<HeroTile image{/* image: see source */} title='Hello, Erika!' links{/* links: see source */} imageQuality={75} />",
+      "notes": []
+    },
+    {
+      "name": "Login",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { Login } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "login",
+          "type": "UseAccountReturn['login']",
+          "required": true
+        },
+        {
+          "name": "requestPasswordReset",
+          "type": "UseAccountReturn['requestPasswordReset']",
+          "required": true
+        }
+      ],
+      "propsTypeName": "LoginProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "Modal",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/modal",
+      "importFromBarrel": "import { Modal } from '@scaffold';",
+      "props": [
+        {
+          "name": "closeButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "'fit' | 'sm' | 'md' | 'lg'",
+          "required": false
+        },
+        {
+          "name": "centered",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "'default' | 'sticky-bottom'",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ModalProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "ReactModalProps"
+      ],
+      "example": "<Modal size='sm' />",
+      "notes": []
+    },
+    {
+      "name": "OrderItemsListing",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/order-items-listing",
+      "importFromBarrel": "import { OrderItemsListing } from '@scaffold';",
+      "props": [
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "lineItems",
+          "type": "LineItem[]",
+          "required": true
+        }
+      ],
+      "propsTypeName": "OrderItemsListingProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "OrderPaymentSection",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/order-payment-section",
+      "importFromBarrel": "import { OrderPaymentSection } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No OrderPaymentSectionProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "OrderSummary",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/order-summary",
+      "importFromBarrel": "import { OrderSummary } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "className",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "ClassNames",
+          "required": false
+        },
+        {
+          "name": "cart",
+          "type": "Cart",
+          "required": false
+        },
+        {
+          "name": "order",
+          "type": "Order",
+          "required": false
+        },
+        {
+          "name": "includeItemsList",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "includeSummaryAccordion",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "paymentMethods",
+          "type": "Array<PaymentMethod>",
+          "required": false
+        },
+        {
+          "name": "dataReference",
+          "type": "'order' | 'cart'",
+          "required": false
+        },
+        {
+          "name": "button",
+          "type": "ReactElement<unknown>",
+          "required": false
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction",
+          "required": false
+        },
+        {
+          "name": "discounts",
+          "type": "Array<Discount & { onRemove?: () => Promise<boolean> }>",
+          "required": false
+        },
+        {
+          "name": "onDiscountRedeem",
+          "type": "(code: string) => Promise<boolean>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "OrderSummaryProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "ProductDetails",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/product-details",
+      "importFromBarrel": "import { ProductDetails } from '@scaffold';",
+      "props": [
+        {
+          "name": "description",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "specifications",
+          "type": "Array<Attribute>",
+          "required": false
+        },
+        {
+          "name": "product",
+          "type": "Product",
+          "required": true
+        },
+        {
+          "name": "addToCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "addToCart",
+          "type": "(count: number) => Promise<void>",
+          "required": true
+        },
+        {
+          "name": "shippingMethods",
+          "type": "ShippingMethod[]",
+          "required": true
+        },
+        {
+          "name": "currentColor",
+          "type": "Attribute",
+          "required": true
+        },
+        {
+          "name": "currentSpecs",
+          "type": "Attribute",
+          "required": true
+        },
+        {
+          "name": "getWishlists",
+          "type": "() => Promise<Array<Wishlist> | undefined>",
+          "required": true
+        },
+        {
+          "name": "addToWishlists",
+          "type": "(wishlistIds: string[], count?: number) => Promise<Wishlist[]>",
+          "required": true
+        },
+        {
+          "name": "removeFromWishlists",
+          "type": "(wishlists: { wishlistId: string; lineItemId: string }[]) => Promise<Wishlist[]>",
+          "required": true
+        },
+        {
+          "name": "addToNewWishlist",
+          "type": "( list: Pick<SharedWishlist, 'name' | 'description' | 'store'>, count?: number, ) => Promise<SharedWishlist | null>",
+          "required": true
+        },
+        {
+          "name": "onChangeVariant",
+          "type": "(variant: 'color' | 'model', value: string) => void",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ProductDetailsProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": "<ProductDetails product{/* product: see source */} currentColor={{ label: 'Light Blue', value: 'lightblue' }} />",
+      "notes": []
+    },
+    {
+      "name": "ProductList",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/product-list",
+      "importFromBarrel": "import { ProductList } from '@scaffold';",
+      "props": [
+        {
+          "name": "products",
+          "type": "Product[]",
+          "required": true
+        },
+        {
+          "name": "facets",
+          "type": "Facet[]",
+          "required": true
+        },
+        {
+          "name": "searchQuery",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "breadcrumb",
+          "type": "Array<CategoryBreadcrumb>",
+          "required": true
+        },
+        {
+          "name": "onRefine",
+          "type": "(facet: Facet[]) => void",
+          "required": true
+        },
+        {
+          "name": "onResetAll",
+          "type": "() => void",
+          "required": true
+        },
+        {
+          "name": "currentSortValue",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "currentSortVector",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "sortValues",
+          "type": "(Option & { vector: 'asc' | 'desc' })[]",
+          "required": true
+        },
+        {
+          "name": "onSortValueChange",
+          "type": "(sortValue: string, vector: 'asc' | 'desc') => void",
+          "required": true
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "onLoadMore",
+          "type": "() => void",
+          "required": true
+        },
+        {
+          "name": "addToCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onAddToCart",
+          "type": "(sku: string, qty: number) => Promise<void>",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ProductListProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ProductList products{/* products: see source */} title='Brake System' breadcrumb={[\n    { name: 'Home', link: '#' },\n    { name: 'Brake Systems', link: '#' },\n  ]} limit={30} total={145} sortValues{/* sortValues: see source */} currentSortValue='featured' facets{/* facets: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "ProductSlider",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/product-slider",
+      "importFromBarrel": "import { ProductSlider } from '@scaffold';",
+      "props": [
+        {
+          "name": "headline",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "products",
+          "type": "Product[]",
+          "required": true
+        },
+        {
+          "name": "addToCartDisabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onAddToCart",
+          "type": "(sku: string) => Promise<void>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ProductSliderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ProductSlider headline='Similiar products' products={sliderItems} />",
+      "notes": []
+    },
+    {
+      "name": "QuickOrderAccordion",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/quick-order",
+      "importFromBarrel": "import { QuickOrderAccordion } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<QuickOrderAccordion items={items} downloadLink='/template.csv' />",
+      "notes": [
+        "No QuickOrderAccordionProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "QuickOrderDesktop",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/quick-order",
+      "importFromBarrel": "import { QuickOrderDesktop } from '@scaffold';",
+      "props": [
+        {
+          "name": "downloadLink",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "handleSKUsUpdate",
+          "type": "(skus: string[]) => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "QuickOrderDesktopProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "QuickOrderProps"
+      ],
+      "example": "<QuickOrderDesktop items={items} downloadLink='/template.csv' />",
+      "notes": []
+    },
+    {
+      "name": "QuoteThankYou",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/quote-thank-you",
+      "importFromBarrel": "import { QuoteThankYou } from '@scaffold';",
+      "props": [
+        {
+          "name": "account",
+          "type": "{ email: string }",
+          "required": true
+        },
+        {
+          "name": "quoteRequestId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "deliveryMethod",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "deliveryAddress",
+          "type": "Address",
+          "required": false
+        },
+        {
+          "name": "paymentMethod",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "billingAddress",
+          "type": "Address",
+          "required": false
+        },
+        {
+          "name": "comment",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "onReviewQuoteClick",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "lineItems",
+          "type": "Product[]",
+          "required": true
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction",
+          "required": true
+        },
+        {
+          "name": "purchaseOrderNumber",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "QuoteThankYouProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<QuoteThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} quoteRequestId='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} comment='Can I have a 10% discount on Bd10T789?' lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "Register",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { Register } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "register",
+          "type": "UseAccountReturn['register']",
+          "required": true
+        }
+      ],
+      "propsTypeName": "RegisterProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "ResetPassword",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { ResetPassword } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "resetPassword",
+          "type": "UseAccountReturn['resetPassword']",
+          "required": true
+        }
+      ],
+      "propsTypeName": "ResetPasswordProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "ResponsiveModal",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/responsive-modal",
+      "importFromBarrel": "import { ResponsiveModal } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No ResponsiveModalProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "RuleBuilder",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/rule-builder",
+      "importFromBarrel": "import { RuleBuilder } from '@scaffold';",
+      "props": [
+        {
+          "name": "group",
+          "type": "Group",
+          "required": false
+        },
+        {
+          "name": "maxDepth",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "translations",
+          "type": "Translations",
+          "required": false
+        },
+        {
+          "name": "singleMode",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "includeGroupHeader",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "includeRemoveButton",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "onRemoveGroup",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "isPreview",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "criteria",
+          "type": "Criteria[]",
+          "required": true
+        },
+        {
+          "name": "onRuleUpdate",
+          "type": "(rule: Group) => void",
+          "required": false
+        },
+        {
+          "name": "onReset",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "allowedCombinators",
+          "type": "GroupProps['allowedCombinators']",
+          "required": false
+        },
+        {
+          "name": "showCombinators",
+          "type": "GroupProps['showCombinators']",
+          "required": false
+        }
+      ],
+      "propsTypeName": "RuleBuilderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<RuleBuilder isPreview={false} criteria{/* criteria: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "Search",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/search",
+      "importFromBarrel": "import { Search } from '@scaffold';",
+      "props": [
+        {
+          "name": "ref",
+          "type": "React.ForwardedRef<HTMLInputElement | null>",
+          "required": false
+        },
+        {
+          "name": "scrollControl",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "'xs' | 'sm' | 'lg'",
+          "required": true
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "searchValue",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "handleOnChange",
+          "type": "(value: string) => void",
+          "required": false
+        },
+        {
+          "name": "searchResult",
+          "type": "ProductSuggestion[]",
+          "required": false
+        },
+        {
+          "name": "filterSearch",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "suggestions",
+          "type": "ProductSuggestion[]",
+          "required": false
+        },
+        {
+          "name": "onProductClick",
+          "type": "(product: ProductSuggestion) => void",
+          "required": false
+        },
+        {
+          "name": "handleSearchAction",
+          "type": "() => void",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SearchProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Search filterSearch={true} variant='xs' suggestions={productList} placeholder='Search...' />",
+      "notes": []
+    },
+    {
+      "name": "ShippingAndLanguage",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/shipping-and-language",
+      "importFromBarrel": "import { ShippingAndLanguage } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<ShippingAndLanguage desktopDirection='left' />",
+      "notes": [
+        "No ShippingAndLanguageProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "Sidebar",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/sidebar",
+      "importFromBarrel": "import { Sidebar } from '@scaffold';",
+      "props": [
+        {
+          "name": "title",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "links",
+          "type": "Array<Link & { isActive?: boolean }>",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SidebarProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<Sidebar title='HELLO, ERIKA!' links{/* links: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "Slider",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/slider",
+      "importFromBarrel": "import { Slider } from '@scaffold';",
+      "props": [
+        {
+          "name": "ref",
+          "type": "React.ForwardedRef<Slick | null>",
+          "required": false
+        },
+        {
+          "name": "spaceBetween",
+          "type": "number | ResponsiveQuery<number>",
+          "required": false
+        },
+        {
+          "name": "arrowSize",
+          "type": "number",
+          "required": false
+        },
+        {
+          "name": "arrowStyles",
+          "type": "React.CSSProperties",
+          "required": false
+        },
+        {
+          "name": "arrowClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "arrowIconClassName",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "arrowVariant",
+          "type": "ArrowProps['variant']",
+          "required": false
+        },
+        {
+          "name": "overlayDarkArrow",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "name": "slideWidth",
+          "type": "number | ResponsiveQuery<number>",
+          "required": false
+        },
+        {
+          "name": "slidesToShow",
+          "type": "number | ResponsiveQuery<number>",
+          "required": false
+        },
+        {
+          "name": "containerClassName",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "SliderProps",
+      "propsKind": "interface",
+      "inheritsFrom": [
+        "Omit<React.ComponentProps<typeof Slick>, 'slidesToShow'>"
+      ],
+      "example": "<Slider slidesToShow={3.2} slidesToScroll={1} arrows={true} arrowSize={32} infinite={false}>{slideElements}</Slider>",
+      "notes": []
+    },
+    {
+      "name": "Table",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/table",
+      "importFromBarrel": "import { Table } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<Table />",
+      "notes": [
+        "No TableProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "Tabs",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/tabs",
+      "importFromBarrel": "import { Tabs } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": "<Tabs>{(\n    <>\n      <Tabs.TabList>\n        <Tabs.Tab>Tab 1</Tabs.Tab>\n        <Tabs.Tab>Tab 2</Tabs.Tab>\n        <Tabs.Tab>Tab 3</Tabs.Tab>\n      </Tabs.TabList>\n      <Tabs.Panels>\n        <Tabs.Panel>Panel 1</Tabs.Panel>\n        <Tabs.Panel>Panel 2</Tabs.Panel>\n        <Tabs.Panel>Panel 3</Tabs.Panel>\n      </Tabs.Panels>\n    </>\n  )}</Tabs>",
+      "notes": [
+        "No TabsProps found in types/index.ts or index.tsx"
+      ]
+    },
+    {
+      "name": "ThankYou",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/thank-you",
+      "importFromBarrel": "import { ThankYou } from '@scaffold';",
+      "props": [
+        {
+          "name": "account",
+          "type": "{ email: string }",
+          "required": true
+        },
+        {
+          "name": "orderId",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "orderNumber",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "deliveryMethod",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "deliveryAddress",
+          "type": "Address",
+          "required": false
+        },
+        {
+          "name": "paymentMethod",
+          "type": "string",
+          "required": false
+        },
+        {
+          "name": "billingAddress",
+          "type": "Address",
+          "required": false
+        },
+        {
+          "name": "onReviewOrderClick",
+          "type": "() => void",
+          "required": false
+        },
+        {
+          "name": "lineItems",
+          "type": "Product[]",
+          "required": true
+        },
+        {
+          "name": "transaction",
+          "type": "Transaction",
+          "required": true
+        },
+        {
+          "name": "purchaseOrderNumber",
+          "type": "string",
+          "required": false
+        }
+      ],
+      "propsTypeName": "ThankYouProps",
+      "propsKind": "interface",
+      "inheritsFrom": [],
+      "example": "<ThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} orderNumber='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />",
+      "notes": []
+    },
+    {
+      "name": "VerifyAssociate",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { VerifyAssociate } from '@scaffold';",
+      "props": [
+        {
+          "name": "image",
+          "type": "ImageProps",
+          "required": true
+        },
+        {
+          "name": "logo",
+          "type": "Image",
+          "required": true
+        },
+        {
+          "name": "logoLink",
+          "type": "Link",
+          "required": true
+        },
+        {
+          "name": "company",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "onSubmit",
+          "type": "onSubmitVerifyAssociate",
+          "required": true
+        }
+      ],
+      "propsTypeName": "VerifyAssociateProps",
+      "propsKind": "type-alias",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": []
+    },
+    {
+      "name": "VerifyFailed",
+      "category": "organism",
+      "componentDir": "src/components/scaffold/organisms/authentication",
+      "importFromBarrel": "import { VerifyFailed } from '@scaffold';",
+      "props": [],
+      "propsTypeName": null,
+      "propsKind": "unknown",
+      "inheritsFrom": [],
+      "example": null,
+      "notes": [
+        "No VerifyFailedProps found in types/index.ts or index.tsx"
+      ]
+    }
+  ]
+}
