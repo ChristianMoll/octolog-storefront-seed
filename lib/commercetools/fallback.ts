@@ -19,7 +19,7 @@ const FALLBACK_CATEGORIES: Category[] = [
     categoryId: "fallback-cat-apparel",
     categoryKey: "apparel",
     name: "Apparel",
-    link: "/apparel",
+    link: "/c/apparel",
     paths: {},
     descendants: [],
   },
@@ -27,7 +27,7 @@ const FALLBACK_CATEGORIES: Category[] = [
     categoryId: "fallback-cat-accessories",
     categoryKey: "accessories",
     name: "Accessories",
-    link: "/accessories",
+    link: "/c/accessories",
     paths: {},
     descendants: [],
   },
@@ -48,7 +48,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     inStock: true,
     quantity: 42,
     categories: [FALLBACK_CATEGORIES[0]],
-    url: "/fallback-tee",
+    url: "/p/fallback-tee",
   },
   {
     id: "fallback-product-tote",
@@ -64,7 +64,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     inStock: true,
     quantity: 17,
     categories: [FALLBACK_CATEGORIES[1]],
-    url: "/fallback-tote",
+    url: "/p/fallback-tote",
   },
 ];
 
