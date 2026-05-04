@@ -1,44 +1,78 @@
 'use client';
 
-import { Button, Card, ProductTile } from '@scaffold';
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import {
+  Banner,
+  HeroTile,
+  ProductSlider,
+  ProductTile,
+  SectionHeader,
+} from '@scaffold';
 import type { Product } from '@/types/entity/product';
+import type { Category } from '@/types/entity/category';
 
-export default function HomePage({ products }: { products: Product[] }) {
-  const featured = products[0];
+export default function HomePage({
+  products,
+  categories,
+}: {
+  products: Product[];
+  categories: Category[];
+}) {
+  const firstCategoryLink = categories[0]?.link ?? '/search';
+  const visibleCategories = categories.slice(0, 4);
+
   return (
-    <main className="p-8 space-y-6">
-      <h1 className="text-2xl font-semibold">Storefront seed — smoke test</h1>
+    <div className="mx-auto max-w-7xl px-4 py-8 space-y-12">
+      <HeroTile
+        title="Welcome to the storefront"
+        imageQuality={75}
+        links={[
+          { name: 'Shop the catalog', href: '/search' },
+          { name: 'Browse categories', href: firstCategoryLink },
+        ]}
+      />
 
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Buttons</h2>
-        <div className="flex gap-2">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="ghost">Ghost</Button>
-        </div>
-      </section>
+      {products.length > 0 && (
+        <section>
+          <ProductSlider headline="Featured products" products={products} />
+        </section>
+      )}
 
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Card</h2>
-        <Card icon={<ChatBubbleLeftRightIcon />} title="Quotes" summary="Manage quote requests" />
-      </section>
-
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">
-          ProductTile{' '}
-          <span className="text-sm text-gray-500">
-            ({products.length} product{products.length === 1 ? '' : 's'} loaded from commercetools)
-          </span>
-        </h2>
-        {featured ? (
-          <div className="max-w-sm">
-            <ProductTile item={featured} variant="grid-item" />
+      {visibleCategories.length > 0 && (
+        <section className="space-y-4">
+          <SectionHeader
+            title="Shop by category"
+            link={{ name: 'View all', href: '/search' }}
+          />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {visibleCategories.map((c) => (
+              <Banner
+                key={c.categoryId}
+                title={c.name}
+                buttonText="Shop now"
+                buttonLink={{ type: 'link', link: c.link }}
+                size="sm"
+              />
+            ))}
           </div>
-        ) : (
-          <p className="text-sm text-gray-500">No products returned.</p>
-        )}
-      </section>
-    </main>
+        </section>
+      )}
+
+      {products.length > 0 && (
+        <section className="space-y-4">
+          <SectionHeader title="More to explore" />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {products.slice(0, 8).map((p) => (
+              <ProductTile key={p.id} item={p} variant="grid-item" />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {products.length === 0 && (
+        <p className="text-neutral-600">
+          No products are currently available.
+        </p>
+      )}
+    </div>
   );
 }
