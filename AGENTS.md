@@ -66,6 +66,10 @@ Hard rules:
   fallback so `next dev` still renders. Do NOT rely on the fallback for the
   agent's own output — the agent's storefront should assume real data is
   available.
+- The helpers never throw. On any error (network, auth, malformed response,
+  missing field) they log to stderr and return `[]` (or `null` for
+  `getProduct`). Don't wrap calls in your own `try`/`catch`, and do render a
+  graceful empty state for the `[]` case instead of assuming results exist.
 
 Example — homepage listing real products:
 
@@ -97,7 +101,10 @@ export default function ProductGrid({ products }: { products: Product[] }) {
 }
 ```
 
-Example — search page reading the `q` query param:
+Example — search page reading the `q` query param. Note the empty-state
+handling: `searchProducts` returns `[]` for both "no query" and "query had
+zero matches" (and also for any underlying SDK failure), so the page must
+render something for that case.
 
 ```tsx
 // app/search/page.tsx
@@ -111,7 +118,19 @@ export default async function SearchPage({
 }) {
   const { q = '' } = await searchParams;
   const products = q ? await searchProducts({ query: q, limit: 24 }) : [];
-  return <ProductGrid products={products} />;
+
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <h1 className="text-2xl font-semibold mb-6">
+        {q ? `Search results for "${q}"` : 'Search'}
+      </h1>
+      {q && products.length === 0 ? (
+        <p className="text-neutral-600">No products matched "{q}".</p>
+      ) : (
+        <ProductGrid products={products} />
+      )}
+    </main>
+  );
 }
 ```
 

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useCallback, useEffect, useState } from 'react';
 import Overlay from '@/components/atoms/overlay';
 import SearchInput from '@/components/atoms/search-input';
