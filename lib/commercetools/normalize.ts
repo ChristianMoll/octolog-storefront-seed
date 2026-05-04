@@ -36,12 +36,12 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
   const description = localized(p.description, tenant.locale);
   const mv = p.masterVariant;
 
-  const images = mv.images?.map((img) => img.url);
+  const images = mv?.images?.map((img) => img.url);
 
   const priceEntry =
-    mv.price ??
-    mv.prices?.find((pr) => pr.value.currencyCode === tenant.currency) ??
-    mv.prices?.[0];
+    mv?.price ??
+    mv?.prices?.find((pr) => pr.value.currencyCode === tenant.currency) ??
+    mv?.prices?.[0];
   const priceObj = priceEntry?.value;
   const validCurrency =
     priceObj && isCurrency(priceObj.currencyCode) ? priceObj.currencyCode : undefined;
@@ -66,17 +66,17 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
     ? discountedObj.centAmount / Math.pow(10, discountedFd)
     : undefined;
 
-  const specifications = mv.attributes?.map((a) => ({
+  const specifications = mv?.attributes?.map((a) => ({
     label: a.name,
     value: typeof a.value === "string" ? a.value : JSON.stringify(a.value),
   }));
 
-  const avail = mv.availability;
+  const avail = mv?.availability;
   const inStock = avail?.isOnStock;
   const quantity = avail?.availableQuantity;
   const restockableInDays = avail?.restockableInDays;
 
-  const categories = p.categories.map((ref) => {
+  const categories = (p.categories ?? []).map((ref) => {
     const obj = ref.obj;
     const catName = obj ? localized(obj.name, tenant.locale) : undefined;
     const catSlug = obj?.slug ? localized(obj.slug, tenant.locale) : undefined;
@@ -96,7 +96,7 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
     id: p.id,
     key: p.key,
     ref: p.id,
-    sku: mv.sku ?? p.id,
+    sku: mv?.sku ?? p.id,
     name,
     description,
     specifications,

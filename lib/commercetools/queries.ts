@@ -58,8 +58,13 @@ export async function listProducts(opts: ListProductsOptions = {}): Promise<Prod
   if (opts.categoryId) {
     queryArgs.where = `categories(id="${opts.categoryId}")`;
   }
-  const res = await api().productProjections().get({ queryArgs }).execute();
-  return res.body.results.map((p) => normaliseProduct(p, tenant));
+  try {
+    const res = await api().productProjections().get({ queryArgs }).execute();
+    return res.body.results.map((p) => normaliseProduct(p, tenant));
+  } catch (err) {
+    console.error("[commercetools] listProducts failed:", err);
+    return [];
+  }
 }
 
 export async function getProduct(
@@ -101,13 +106,18 @@ export async function listCategories(opts: ListCategoriesOptions = {}): Promise<
     return fallbackCategories();
   }
   const tenant = tenantOf(opts);
-  const res = await api()
-    .categories()
-    .get({ queryArgs: { limit: opts.limit ?? 100 } })
-    .execute();
-  const flat = res.body.results.map((c) => normaliseCategory(c, tenant));
-  if (opts.format === "tree") return buildCategoryTree(flat, res.body.results);
-  return flat;
+  try {
+    const res = await api()
+      .categories()
+      .get({ queryArgs: { limit: opts.limit ?? 100 } })
+      .execute();
+    const flat = res.body.results.map((c) => normaliseCategory(c, tenant));
+    if (opts.format === "tree") return buildCategoryTree(flat, res.body.results);
+    return flat;
+  } catch (err) {
+    console.error("[commercetools] listCategories failed:", err);
+    return [];
+  }
 }
 
 export async function searchProducts(opts: SearchProductsOptions): Promise<Product[]> {
@@ -129,6 +139,11 @@ export async function searchProducts(opts: SearchProductsOptions): Promise<Produ
   if (opts.filters && opts.filters.length > 0) {
     queryArgs.filter = opts.filters;
   }
-  const res = await api().productProjections().search().get({ queryArgs }).execute();
-  return res.body.results.map((p) => normaliseProduct(p, tenant));
+  try {
+    const res = await api().productProjections().search().get({ queryArgs }).execute();
+    return res.body.results.map((p) => normaliseProduct(p, tenant));
+  } catch (err) {
+    console.error(`[commercetools] searchProducts failed for query="${opts.query}":`, err);
+    return [];
+  }
 }
