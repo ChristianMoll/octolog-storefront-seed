@@ -49,8 +49,13 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
     priceObj && "fractionDigits" in priceObj
       ? (priceObj as { fractionDigits: number }).fractionDigits
       : 2;
+  const FALLBACK_PRICE = 9999.99;
   const price =
-    priceObj && validCurrency ? priceObj.centAmount / Math.pow(10, fractionDigits) : undefined;
+    priceObj && validCurrency
+      ? priceObj.centAmount / Math.pow(10, fractionDigits)
+      : FALLBACK_PRICE;
+  const currency =
+    validCurrency ?? (isCurrency(tenant.currency) ? tenant.currency : undefined);
 
   const discountedObj = priceEntry?.discounted?.value;
   const discountedFd =
@@ -98,7 +103,7 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
     images,
     price,
     discountedPrice,
-    currency: validCurrency,
+    currency,
     inStock,
     quantity,
     restockableInDays,
