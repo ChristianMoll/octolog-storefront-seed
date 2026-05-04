@@ -1,44 +1,32 @@
 'use client';
 
-import { Button, Card, ProductTile } from '@scaffold';
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { HeroTile, SectionHeader } from '@scaffold';
 import type { Product } from '@/types/entity/product';
+import ProductGrid from './ProductGrid';
 
 export default function HomePage({ products }: { products: Product[] }) {
-  const featured = products[0];
   return (
-    <main className="p-8 space-y-6">
-      <h1 className="text-2xl font-semibold">Storefront seed — smoke test</h1>
+    <>
+      <HeroTile
+        title="Built for the long way home."
+        image={{ src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1800' }}
+        links={[
+          { name: 'Shop the catalog', href: '/search' },
+          { name: 'New arrivals', href: '/search?q=new' },
+        ]}
+        isPriority
+        imageQuality={75}
+      />
 
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Buttons</h2>
-        <div className="flex gap-2">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="ghost">Ghost</Button>
+      <section className="px-4 py-8 md:px-6 md:py-12 lg:px-12">
+        <SectionHeader
+          title="Featured gear"
+          link={{ name: 'See all', href: '/search' }}
+        />
+        <div className="mt-6">
+          <ProductGrid products={products} emptyMessage="No featured products yet." />
         </div>
       </section>
-
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Card</h2>
-        <Card icon={<ChatBubbleLeftRightIcon />} title="Quotes" summary="Manage quote requests" />
-      </section>
-
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">
-          ProductTile{' '}
-          <span className="text-sm text-gray-500">
-            ({products.length} product{products.length === 1 ? '' : 's'} loaded from commercetools)
-          </span>
-        </h2>
-        {featured ? (
-          <div className="max-w-sm">
-            <ProductTile item={featured} variant="grid-item" />
-          </div>
-        ) : (
-          <p className="text-sm text-gray-500">No products returned.</p>
-        )}
-      </section>
-    </main>
+    </>
   );
 }

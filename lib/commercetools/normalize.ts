@@ -78,14 +78,14 @@ export function normaliseProduct(p: ProductProjection, tenant: TenantContext): P
     return {
       categoryId: ref.id,
       name: catName ?? ref.id,
-      link: catSlug ? `/${catSlug}` : `/${ref.id}`,
+      link: catSlug ? `/c/${catSlug}` : `/c/${ref.id}`,
       paths: {},
       descendants: [],
     } satisfies Category;
   });
 
   const slug = localized(p.slug, tenant.locale);
-  const url = slug ? `/${slug}` : undefined;
+  const url = slug ? `/p/${slug}` : undefined;
 
   return {
     id: p.id,
@@ -115,7 +115,7 @@ export function normaliseCategory(c: CtCategory, tenant: TenantContext): Categor
     categoryKey: c.key,
     categoryRef: c.id,
     name,
-    link: slug ? `/${slug}` : `/${c.id}`,
+    link: slug ? `/c/${slug}` : `/c/${c.id}`,
     paths: {},
     descendants: [],
   };
