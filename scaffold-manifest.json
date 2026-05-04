@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T09:49:03.358Z",
+  "generatedAt": "2026-05-04T11:27:21.938Z",
   "components": [
     {
       "name": "Button",
@@ -4338,7 +4338,7 @@
       "propsTypeName": "HeaderProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Header variant='navigation' pageLinks={[\n    resolveReference({ type: 'link', link: '/' }, 'Member + Benefits'),\n    resolveReference({ type: 'link', link: '/' }, 'Sale'),\n    resolveReference({ type: 'link', link: '/' }, 'New items'),\n  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} stores={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts={[{ id, sku, name, maxQuantity, image, url }, /* ...7 more */]} csvDownloadLink='/template.csv' />",
+      "example": "<Header variant='navigation' pageLinks={[\n    resolveReference({ type: 'link', link: '/' }, 'Member + Benefits'),\n    resolveReference({ type: 'link', link: '/' }, 'Sale'),\n    resolveReference({ type: 'link', link: '/' }, 'New items'),\n  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/logo.svg', width: 120, height: 32 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} stores={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts={[{ id, sku, name, maxQuantity, image, url }, /* ...7 more */]} csvDownloadLink='/template.csv' />",
       "notes": []
     },
     {

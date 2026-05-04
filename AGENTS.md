@@ -12,6 +12,13 @@ everything — do NOT write raw HTML or Tailwind divs where a component exists.
 - Pages live under `app/`. Use the Next.js 16 app router conventions.
 - Tailwind v4 is available; CSS Modules work too. Prefer scaffold components over
   inline Tailwind for anything substantive.
+- The Header `logo` prop must use a path under `/public/` that actually exists
+  in the seed (e.g. `{ src: '/logo.svg', width: 120, height: 32 }`). A
+  placeholder logo is shipped at `public/logo.svg` — use it unless the user
+  has supplied a real brand asset. Do NOT invent absolute URLs to
+  `commercetools.com` or any other external CDN, and do NOT use
+  `/sb-assets/...` paths — those are Storybook-only and do not ship to the
+  storefront.
 
 ## Routing conventions
 
@@ -1630,7 +1637,7 @@ import { Button, Card, ProductTile } from '@scaffold';
     resolveReference({ type: 'link', link: '/' }, 'Member + Benefits'),
     resolveReference({ type: 'link', link: '/' }, 'Sale'),
     resolveReference({ type: 'link', link: '/' }, 'New items'),
-  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[
+  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/logo.svg', width: 120, height: 32 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[
     { name: 'opt1', value: 'opt1' },
     { name: 'opt2', value: 'opt2' },
     { name: 'opt3', value: 'opt3' },
