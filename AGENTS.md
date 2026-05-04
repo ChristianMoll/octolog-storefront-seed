@@ -13,6 +13,101 @@ everything — do NOT write raw HTML or Tailwind divs where a component exists.
 - Tailwind v4 is available; CSS Modules work too. Prefer scaffold components over
   inline Tailwind for anything substantive.
 
+## Routing conventions
+
+The scaffold is configured single-locale. Routes are flat — do NOT add a
+`[locale]` segment, do NOT prefix any href with a locale, and do NOT add
+`next-intl` middleware. Use these canonical paths:
+
+- **Product detail** → `app/p/[slug]/page.tsx` resolves at `/p/<slug>`. When
+  normalising commercetools data into the scaffold's `Product` shape, set
+  `Product.url = `/p/${slug}``. Components like `ProductTile` link via
+  `Product.url`, so an unset value silently produces an `href="#"`.
+- **Category** → `app/c/[slug]/page.tsx` resolves at `/c/<slug>`. When
+  building `categoryLinks` for `Header`, set each entry's `link` field to
+  `/c/${slug}` (and `paths` likewise if present). Categories without a
+  `link` will navigate to `/`.
+- **Search** → `app/search/page.tsx` reads `searchParams.q`. The `Search`
+  component's `handleSearchAction` should navigate to `/search?q=<query>`.
+- **Home** → `app/page.tsx`. Hero CTAs that "shop" the catalog should point
+  at `/search` or a relevant `/c/<slug>`.
+
+Do not invent route shapes (`/products/...`, `/category/...`, `/en/...`).
+Stick to `/p/[slug]`, `/c/[slug]`, `/search`.
+
+## Data sourcing
+
+Real commercetools data is available at runtime. The env vars `CTP_API_URL`,
+`CTP_AUTH_URL`, `CTP_CLIENT_ID`, `CTP_CLIENT_SECRET`, `CTP_PROJECT_KEY`,
+`CTP_SCOPES` are pre-configured by the platform — do NOT hardcode them, write
+`.env` files, or commit credentials.
+
+Hard rules:
+
+- **Do NOT invent product, category, price, or image data.** Use the helpers in
+  `lib/commercetools/queries.ts`:
+  - `listProducts({ limit?, offset?, categoryId?, currency?, country?, locale? })`
+  - `getProduct(idOrKey, { currency?, country?, locale? })`
+  - `listCategories({ format?: 'flat' | 'tree' })`
+  - `searchProducts({ query, limit?, filters?, currency?, country?, locale? })`
+- These are server-only. Call them from server components (the default in
+  `app/`) or from Route Handlers. Never call them from a `'use client'` file.
+- Pattern: a server component fetches data → passes it as props to a client
+  component that does the rendering. Scaffold components like `ProductTile`
+  use hooks, so the rendering layer is `'use client'`.
+- If credentials are missing locally, the helpers return a tiny in-memory
+  fallback so `next dev` still renders. Do NOT rely on the fallback for the
+  agent's own output — the agent's storefront should assume real data is
+  available.
+
+Example — homepage listing real products:
+
+```tsx
+// app/page.tsx (server component, no 'use client')
+import { listProducts } from '@lib/commercetools/queries';
+import ProductGrid from './ProductGrid';
+
+export default async function Page() {
+  const products = await listProducts({ limit: 12 });
+  return <ProductGrid products={products} />;
+}
+```
+
+```tsx
+// app/ProductGrid.tsx
+'use client';
+import { ProductTile } from '@scaffold';
+import type { Product } from '@/types/entity/product';
+
+export default function ProductGrid({ products }: { products: Product[] }) {
+  return (
+    <div className="grid grid-cols-3 gap-4">
+      {products.map((p) => (
+        <ProductTile key={p.id} item={p} variant="grid-item" />
+      ))}
+    </div>
+  );
+}
+```
+
+Example — search page reading the `q` query param:
+
+```tsx
+// app/search/page.tsx
+import { searchProducts } from '@lib/commercetools/queries';
+import ProductGrid from '../ProductGrid';
+
+export default async function SearchPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>;
+}) {
+  const { q = '' } = await searchParams;
+  const products = q ? await searchProducts({ query: q, limit: 24 }) : [];
+  return <ProductGrid products={products} />;
+}
+```
+
 ## Component priority list
 
 These cover most storefronts. Reach for them first; consult the full catalog
@@ -421,7 +516,16 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `title` | `string` | no |
 
 ```tsx
-<Image media{/* media: see source */} />
+<Image media={{
+    mediaId: image.mediaId,
+    name: image.name,
+    file: image.url,
+    resourceType: 'image',
+    tags: [],
+    size: 516362,
+    width: 1378,
+    height: 1378,
+  }} />
 ```
 
 ### InfoTooltip
@@ -823,7 +927,23 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `translations` | `{ accept?: string; decline?: string; cancel?: string; send?: string; }` | no |
 
 ```tsx
-<ActivityLog activities{/* activities: see source */} />
+<ActivityLog activities={[
+    {
+      title: 'Quote request submitted',
+      summary: '11/03/23 15:33 - by Erika',
+      comment: 'Can I have a 10% discount on Bd10T789?',
+    },
+    {
+      title: 'Quote Accepted by Seller',
+      summary: '11/03/23 15:33 - by Anders',
+      comment: 'I have applied your discount Erika!',
+    },
+    {
+      title: 'Awaiting reply from you',
+      reply: true,
+      ctaLink: 'Request to Renogitiate',
+    },
+  ]} />
 ```
 
 ### AddedToCartModal
@@ -1153,7 +1273,12 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `classNames` | `{ track?: string; trackActive?: string; bullet?: string; bulletActive?: string; }` | no |
 
 ```tsx
-<Timeline activeIndex={0} classNames{/* classNames: see source */} />
+<Timeline activeIndex={0} classNames={{
+    track: 'bg-gray-300',
+    trackActive: 'bg-primary',
+    bullet: 'bg-gray-300',
+    bulletActive: 'bg-primary',
+  }} />
 ```
 
 ### VerticalSlider
@@ -1200,7 +1325,17 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `onStoreChange` | `(store: string) => void` | no |
 
 ```tsx
-<AnnouncementBar name='Erika' onLogoutClick={() => {}} textBar='Worldwide shipping & returns *' quotes={4} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} accountLinks{/* accountLinks: see source */} />
+<AnnouncementBar name='Erika' onLogoutClick={() => {}} textBar='Worldwide shipping & returns *' quotes={4} businessUnits={[
+    { name: 'opt1', value: 'opt1' },
+    { name: 'opt2', value: 'opt2' },
+    { name: 'opt3', value: 'opt3' },
+    { name: 'opt4', value: 'opt4' },
+  ]} stores={[
+    { name: 'opt1', value: 'opt1' },
+    { name: 'opt2', value: 'opt2' },
+    { name: 'opt3', value: 'opt3' },
+    { name: 'opt4', value: 'opt4' },
+  ]} accountLinks={[{ categoryId, name, path, paths, descendants }, /* ...6 more */]} />
 ```
 
 ### AuthForm
@@ -1307,7 +1442,12 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `onCancel` | `() => void` | no |
 
 ```tsx
-<Confirmation translations{/* translations: see source */} />
+<Confirmation translations={{
+    title: 'Delete Address',
+    summary: 'Are you sure you want to permanently delete this address?',
+    cancel: 'Cancel',
+    confirm: 'Delete',
+  }} />
 ```
 
 ### ContentItems
@@ -1325,7 +1465,7 @@ import { Button, Card, ProductTile } from '@scaffold';
 ```tsx
 <ContentItems variant='default' title='Product Categories' link={{
     name: 'All categories',
-  }} items{/* items: see source */} />
+  }} items={[{ title, image }, /* ...7 more */]} />
 ```
 
 ### ContentSlider
@@ -1342,7 +1482,12 @@ import { Button, Card, ProductTile } from '@scaffold';
 ```tsx
 <ContentSlider title='Explore latest Trends in Auto Manufacturing' link={{
     name: 'All articles',
-  }} items{/* items: see source */} />
+  }} items={[
+    { title: 'Circular car seneors', link: { name: 'Read more' }, image: { src: '/sb-assets/car-sensor.png' } },
+    { title: 'Hybrid batter systems', link: { name: 'Read more' }, image: { src: '/sb-assets/car-front.png' } },
+    { title: 'Automotive trends in 2023', link: { name: 'Read more' }, image: { src: '/sb-assets/cars-trends.png' } },
+    { title: 'Fuel-Efficient cruiser', link: { name: 'Read more' }, image: { src: '/sb-assets/car.png' } },
+  ]} />
 ```
 
 ### ContentTiles
@@ -1359,7 +1504,11 @@ import { Button, Card, ProductTile } from '@scaffold';
 ```tsx
 <ContentTiles title='Explore latest Trends in Auto Manufacturing' link={{
     name: 'All articles',
-  }} items{/* items: see source */} />
+  }} items={[
+    { title: 'Circular car seneors', link: { name: 'Read more' }, image: { src: '/sb-assets/car-sensor.png' } },
+    { title: 'Hybrid batter systems', link: { name: 'Read more' }, image: { src: '/sb-assets/car-front.png' } },
+    { title: 'Automotive trends in 2023', link: { name: 'Read more' }, image: { src: '/sb-assets/cars-trends.png' } },
+  ]} />
 ```
 
 ### Drawer
@@ -1419,7 +1568,12 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `variant` | `'default' \| 'simple'` | no |
 
 ```tsx
-<Footer variant='default' links{/* links: see source */} copyrightStatement='© Powered by commercetools' />
+<Footer variant='default' links={[
+    { name: 'Orders & returns', href: '#' },
+    { name: 'Help & contact', href: '#' },
+    { name: 'Terms & conditions', href: '#' },
+    { name: 'FAQ', href: '#' },
+  ]} copyrightStatement='© Powered by commercetools' />
 ```
 
 ### Gallery
@@ -1472,7 +1626,21 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `addToCart` | `( lineItems: { sku: string; count: number; }[], ) => Promise<object>` | no |
 
 ```tsx
-<Header variant='navigation' pageLinks{/* pageLinks: see source */} myAccountMenu{/* myAccountMenu: see source */} categoryLinks{/* categoryLinks: see source */} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts{/* quickOrderProducts: see source */} csvDownloadLink='/template.csv' />
+<Header variant='navigation' pageLinks={[
+    resolveReference({ type: 'link', link: '/' }, 'Member + Benefits'),
+    resolveReference({ type: 'link', link: '/' }, 'Sale'),
+    resolveReference({ type: 'link', link: '/' }, 'New items'),
+  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[
+    { name: 'opt1', value: 'opt1' },
+    { name: 'opt2', value: 'opt2' },
+    { name: 'opt3', value: 'opt3' },
+    { name: 'opt4', value: 'opt4' },
+  ]} stores={[
+    { name: 'opt1', value: 'opt1' },
+    { name: 'opt2', value: 'opt2' },
+    { name: 'opt3', value: 'opt3' },
+    { name: 'opt4', value: 'opt4' },
+  ]} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts={[{ id, sku, name, maxQuantity, image, url }, /* ...7 more */]} csvDownloadLink='/template.csv' />
 ```
 
 ### HeroTile
@@ -1489,7 +1657,23 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `imageQuality` | `number` | yes |
 
 ```tsx
-<HeroTile image{/* image: see source */} title='Hello, Erika!' links{/* links: see source */} imageQuality={75} />
+<HeroTile image={{
+    media: {
+      mediaId: image.mediaId,
+      resourceType: 'image',
+      name: image.name,
+      tags: [],
+      file: image.url,
+      size: 516362,
+      width: 1378,
+      height: 1378,
+    },
+    ratio: '16:9',
+  }} title='Hello, Erika!' links={[
+    { name: 'Quotes', href: '#' },
+    { name: 'Orders', href: '#' },
+    { name: 'Company Admin', href: '#' },
+  ]} imageQuality={75} />
 ```
 
 ### Login
@@ -1580,7 +1764,13 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `onChangeVariant` | `(variant: 'color' \| 'model', value: string) => void` | yes |
 
 ```tsx
-<ProductDetails product{/* product: see source */} currentColor={{ label: 'Light Blue', value: 'lightblue' }} />
+<ProductDetails product={{
+    ...commonProductProps,
+    colors: [
+      { label: 'Light Blue', value: 'lightblue' },
+      { label: 'Saddle Brown', value: 'saddlebrown' },
+    ],
+  }} currentColor={{ label: 'Light Blue', value: 'lightblue' }} />
 ```
 
 ### ProductList
@@ -1608,10 +1798,16 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `onAddToCart` | `(sku: string, qty: number) => Promise<void>` | yes |
 
 ```tsx
-<ProductList products{/* products: see source */} title='Brake System' breadcrumb={[
+<ProductList products={Array.from({ length: 20 }, (_, index) => ({
+    id…} title='Brake System' breadcrumb={[
     { name: 'Home', link: '#' },
     { name: 'Brake Systems', link: '#' },
-  ]} limit={30} total={145} sortValues{/* sortValues: see source */} currentSortValue='featured' facets{/* facets: see source */} />
+  ]} limit={30} total={145} sortValues={[
+    { name: 'Featured', value: 'featured', vector: 'asc' },
+    { name: 'Price', value: 'price', vector: 'asc' },
+    { name: 'Best-Selling', value: 'best-selling', vector: 'asc' },
+    { name: 'Newest', value: 'newest', vector: 'asc' },
+  ]} currentSortValue='featured' facets={[{ id, name, type, selected, values, maxVisibleItems }, /* ...3 more */]} />
 ```
 
 ### ProductSlider
@@ -1676,7 +1872,47 @@ import { Button, Card, ProductTile } from '@scaffold';
 ```tsx
 <QuoteThankYou account={{
     email: 'madilyn@gmail.com',
-  }} quoteRequestId='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} comment='Can I have a 10% discount on Bd10T789?' lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />
+  }} quoteRequestId='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress={{
+    id: '1',
+    name: 'commercetools1',
+    careOf: 'Madilyn Newman',
+    line1: 'Fiolvägen 33',
+    zip: '433 22',
+    city: 'Stockholm',
+    country: 'Sweden',
+  }} paymentMethod='Purchase Order ***' billingAddress={{
+    id: '1',
+    name: 'commercetools1',
+    careOf: 'Madilyn Newman',
+    line1: 'Fiolvägen 33',
+    zip: '433 22',
+    city: 'Stockholm',
+    country: 'Sweden',
+  }} comment='Can I have a 10% discount on Bd10T789?' lineItems={[
+    {
+      id: '1',
+      name: 'Brake Pad Set, disc brake DELPHI L20',
+      price: 115.99,
+      currency: 'USD',
+      quantity: 4,
+      images: ['/brake-pad.png'],
+    },
+    {
+      id: '2',
+      name: 'Brake Pad Set, disc brake DELPHI L20',
+      price: 115.99,
+      currency: 'USD',
+      quantity: 3,
+      images: ['/brake-pad.png'],
+    },
+  ]} transaction={{
+    subtotal: 266.99,
+    shipping: 23.99,
+    taxes: 4.99,
+    total: 299.99,
+    discounts: 0,
+    currency: 'USD',
+  }} />
 ```
 
 ### Register
@@ -1730,7 +1966,31 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `showCombinators` | `GroupProps['showCombinators']` | no |
 
 ```tsx
-<RuleBuilder isPreview={false} criteria{/* criteria: see source */} />
+<RuleBuilder isPreview={false} criteria={[
+    {
+      key: 'totalPrice.centAmount',
+      name: 'Cart amount',
+      type: 'text',
+      operators: [
+        { name: 'Is equal', value: '=' },
+        { name: 'Is more than', value: '>' },
+        { name: 'Is less than', value: '<' },
+      ],
+    },
+    {
+      key: 'currency',
+      name: 'Cart currency',
+      type: 'enum',
+      operators: [
+        { name: 'Is', value: 'is' },
+        { name: 'Is not', value: 'is not' },
+      ],
+      values: [
+        { name: 'USD', value: 'usd' },
+        { name: 'EUR', value: 'eur' },
+      ],
+    },
+  ]} />
 ```
 
 ### Search
@@ -1777,7 +2037,15 @@ import { Button, Card, ProductTile } from '@scaffold';
 | `links` | `Array<Link & { isActive?: boolean }>` | no |
 
 ```tsx
-<Sidebar title='HELLO, ERIKA!' links{/* links: see source */} />
+<Sidebar title='HELLO, ERIKA!' links={[
+    { name: 'Dashboard', href: '#', isActive: true },
+    { name: 'Orders', href: '#' },
+    { name: 'Quotes', href: '#' },
+    { name: 'Company Admin', href: '#' },
+    { name: 'Purchase Lists', href: '#' },
+    { name: 'Settings & Security', href: '#' },
+    { name: 'Addresses', href: '#' },
+  ]} />
 ```
 
 ### Slider
@@ -1857,7 +2125,47 @@ import { Button, Card, ProductTile } from '@scaffold';
 ```tsx
 <ThankYou account={{
     email: 'madilyn@gmail.com',
-  }} orderNumber='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />
+  }} orderNumber='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress={{
+    id: '1',
+    name: 'commercetools1',
+    careOf: 'Madilyn Newman',
+    line1: 'Fiolvägen 33',
+    zip: '433 22',
+    city: 'Stockholm',
+    country: 'Sweden',
+  }} paymentMethod='Purchase Order ***' billingAddress={{
+    id: '1',
+    name: 'commercetools1',
+    careOf: 'Madilyn Newman',
+    line1: 'Fiolvägen 33',
+    zip: '433 22',
+    city: 'Stockholm',
+    country: 'Sweden',
+  }} lineItems={[
+    {
+      id: '1',
+      name: 'Brake Pad Set, disc brake DELPHI L20',
+      price: 115.99,
+      currency: 'USD',
+      quantity: 4,
+      images: ['/brake-pad.png'],
+    },
+    {
+      id: '2',
+      name: 'Brake Pad Set, disc brake DELPHI L20',
+      price: 115.99,
+      currency: 'USD',
+      quantity: 3,
+      images: ['/brake-pad.png'],
+    },
+  ]} transaction={{
+    subtotal: 266.99,
+    shipping: 23.99,
+    taxes: 4.99,
+    total: 299.99,
+    discounts: 0,
+    currency: 'USD',
+  }} />
 ```
 
 ### VerifyAssociate

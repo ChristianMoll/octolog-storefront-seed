@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-27T12:25:57.085Z",
+  "generatedAt": "2026-05-04T07:11:03.396Z",
   "components": [
     {
       "name": "Button",
@@ -1735,7 +1735,7 @@
       "propsTypeName": "ImageProps",
       "propsKind": "type-alias",
       "inheritsFrom": [],
-      "example": "<Image media{/* media: see source */} />",
+      "example": "<Image media={{\n    mediaId: image.mediaId,\n    name: image.name,\n    file: image.url,\n    resourceType: 'image',\n    tags: [],\n    size: 516362,\n    width: 1378,\n    height: 1378,\n  }} />",
       "notes": []
     },
     {
@@ -2726,7 +2726,7 @@
       "propsTypeName": "ActivityLogProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ActivityLog activities{/* activities: see source */} />",
+      "example": "<ActivityLog activities={[\n    {\n      title: 'Quote request submitted',\n      summary: '11/03/23 15:33 - by Erika',\n      comment: 'Can I have a 10% discount on Bd10T789?',\n    },\n    {\n      title: 'Quote Accepted by Seller',\n      summary: '11/03/23 15:33 - by Anders',\n      comment: 'I have applied your discount Erika!',\n    },\n    {\n      title: 'Awaiting reply from you',\n      reply: true,\n      ctaLink: 'Request to Renogitiate',\n    },\n  ]} />",
       "notes": []
     },
     {
@@ -3449,7 +3449,7 @@
       "propsTypeName": "TimelineProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Timeline activeIndex={0} classNames{/* classNames: see source */} />",
+      "example": "<Timeline activeIndex={0} classNames={{\n    track: 'bg-gray-300',\n    trackActive: 'bg-primary',\n    bullet: 'bg-gray-300',\n    bulletActive: 'bg-primary',\n  }} />",
       "notes": []
     },
     {
@@ -3589,7 +3589,7 @@
       "propsTypeName": "AnnouncementBarProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<AnnouncementBar name='Erika' onLogoutClick={() => {}} textBar='Worldwide shipping & returns *' quotes={4} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} accountLinks{/* accountLinks: see source */} />",
+      "example": "<AnnouncementBar name='Erika' onLogoutClick={() => {}} textBar='Worldwide shipping & returns *' quotes={4} businessUnits={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} stores={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} accountLinks={[{ categoryId, name, path, paths, descendants }, /* ...6 more */]} />",
       "notes": []
     },
     {
@@ -3929,7 +3929,7 @@
       "propsTypeName": "ConfirmationProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Confirmation translations{/* translations: see source */} />",
+      "example": "<Confirmation translations={{\n    title: 'Delete Address',\n    summary: 'Are you sure you want to permanently delete this address?',\n    cancel: 'Cancel',\n    confirm: 'Delete',\n  }} />",
       "notes": []
     },
     {
@@ -3962,7 +3962,7 @@
       "propsTypeName": "ContentItemsProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ContentItems variant='default' title='Product Categories' link={{\n    name: 'All categories',\n  }} items{/* items: see source */} />",
+      "example": "<ContentItems variant='default' title='Product Categories' link={{\n    name: 'All categories',\n  }} items={[{ title, image }, /* ...7 more */]} />",
       "notes": []
     },
     {
@@ -3990,7 +3990,7 @@
       "propsTypeName": "ContentSliderProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ContentSlider title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items{/* items: see source */} />",
+      "example": "<ContentSlider title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items={[\n    { title: 'Circular car seneors', link: { name: 'Read more' }, image: { src: '/sb-assets/car-sensor.png' } },\n    { title: 'Hybrid batter systems', link: { name: 'Read more' }, image: { src: '/sb-assets/car-front.png' } },\n    { title: 'Automotive trends in 2023', link: { name: 'Read more' }, image: { src: '/sb-assets/cars-trends.png' } },\n    { title: 'Fuel-Efficient cruiser', link: { name: 'Read more' }, image: { src: '/sb-assets/car.png' } },\n  ]} />",
       "notes": []
     },
     {
@@ -4018,7 +4018,7 @@
       "propsTypeName": "ContentTilesProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ContentTiles title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items{/* items: see source */} />",
+      "example": "<ContentTiles title='Explore latest Trends in Auto Manufacturing' link={{\n    name: 'All articles',\n  }} items={[\n    { title: 'Circular car seneors', link: { name: 'Read more' }, image: { src: '/sb-assets/car-sensor.png' } },\n    { title: 'Hybrid batter systems', link: { name: 'Read more' }, image: { src: '/sb-assets/car-front.png' } },\n    { title: 'Automotive trends in 2023', link: { name: 'Read more' }, image: { src: '/sb-assets/cars-trends.png' } },\n  ]} />",
       "notes": []
     },
     {
@@ -4147,7 +4147,7 @@
       "propsTypeName": "FooterProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Footer variant='default' links{/* links: see source */} copyrightStatement='© Powered by commercetools' />",
+      "example": "<Footer variant='default' links={[\n    { name: 'Orders & returns', href: '#' },\n    { name: 'Help & contact', href: '#' },\n    { name: 'Terms & conditions', href: '#' },\n    { name: 'FAQ', href: '#' },\n  ]} copyrightStatement='© Powered by commercetools' />",
       "notes": []
     },
     {
@@ -4338,7 +4338,7 @@
       "propsTypeName": "HeaderProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Header variant='navigation' pageLinks{/* pageLinks: see source */} myAccountMenu{/* myAccountMenu: see source */} categoryLinks{/* categoryLinks: see source */} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits{/* businessUnits: see source */} stores{/* stores: see source */} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts{/* quickOrderProducts: see source */} csvDownloadLink='/template.csv' />",
+      "example": "<Header variant='navigation' pageLinks={[\n    resolveReference({ type: 'link', link: '/' }, 'Member + Benefits'),\n    resolveReference({ type: 'link', link: '/' }, 'Sale'),\n    resolveReference({ type: 'link', link: '/' }, 'New items'),\n  ]} myAccountMenu={{ categoryId, name, path, paths, descendants }} categoryLinks={[{ categoryId, name, link, paths, descendants }, /* ...2 more */]} logo={{ src: '/sb-assets/THE B2B STORE.png', width: 1481, height: 84 }} logoLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} accountLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} cartItems={23} cartLink={resolveReference({ type: 'link', link: '/' }, 'Logo')} businessUnits={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} stores={[\n    { name: 'opt1', value: 'opt1' },\n    { name: 'opt2', value: 'opt2' },\n    { name: 'opt3', value: 'opt3' },\n    { name: 'opt4', value: 'opt4' },\n  ]} quotes={4} searchPlaceholder='Search by SKU number, product name or keyword' searchSuggestions={productListImage} quickOrderProducts={[{ id, sku, name, maxQuantity, image, url }, /* ...7 more */]} csvDownloadLink='/template.csv' />",
       "notes": []
     },
     {
@@ -4376,7 +4376,7 @@
       "propsTypeName": "HeroTileProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<HeroTile image{/* image: see source */} title='Hello, Erika!' links{/* links: see source */} imageQuality={75} />",
+      "example": "<HeroTile image={{\n    media: {\n      mediaId: image.mediaId,\n      resourceType: 'image',\n      name: image.name,\n      tags: [],\n      file: image.url,\n      size: 516362,\n      width: 1378,\n      height: 1378,\n    },\n    ratio: '16:9',\n  }} title='Hello, Erika!' links={[\n    { name: 'Quotes', href: '#' },\n    { name: 'Orders', href: '#' },\n    { name: 'Company Admin', href: '#' },\n  ]} imageQuality={75} />",
       "notes": []
     },
     {
@@ -4642,7 +4642,7 @@
       "propsTypeName": "ProductDetailsProps",
       "propsKind": "type-alias",
       "inheritsFrom": [],
-      "example": "<ProductDetails product{/* product: see source */} currentColor={{ label: 'Light Blue', value: 'lightblue' }} />",
+      "example": "<ProductDetails product={{\n    ...commonProductProps,\n    colors: [\n      { label: 'Light Blue', value: 'lightblue' },\n      { label: 'Saddle Brown', value: 'saddlebrown' },\n    ],\n  }} currentColor={{ label: 'Light Blue', value: 'lightblue' }} />",
       "notes": []
     },
     {
@@ -4735,7 +4735,7 @@
       "propsTypeName": "ProductListProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ProductList products{/* products: see source */} title='Brake System' breadcrumb={[\n    { name: 'Home', link: '#' },\n    { name: 'Brake Systems', link: '#' },\n  ]} limit={30} total={145} sortValues{/* sortValues: see source */} currentSortValue='featured' facets{/* facets: see source */} />",
+      "example": "<ProductList products={Array.from({ length: 20 }, (_, index) => ({\n    id…} title='Brake System' breadcrumb={[\n    { name: 'Home', link: '#' },\n    { name: 'Brake Systems', link: '#' },\n  ]} limit={30} total={145} sortValues={[\n    { name: 'Featured', value: 'featured', vector: 'asc' },\n    { name: 'Price', value: 'price', vector: 'asc' },\n    { name: 'Best-Selling', value: 'best-selling', vector: 'asc' },\n    { name: 'Newest', value: 'newest', vector: 'asc' },\n  ]} currentSortValue='featured' facets={[{ id, name, type, selected, values, maxVisibleItems }, /* ...3 more */]} />",
       "notes": []
     },
     {
@@ -4875,7 +4875,7 @@
       "propsTypeName": "QuoteThankYouProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<QuoteThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} quoteRequestId='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} comment='Can I have a 10% discount on Bd10T789?' lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />",
+      "example": "<QuoteThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} quoteRequestId='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress={{\n    id: '1',\n    name: 'commercetools1',\n    careOf: 'Madilyn Newman',\n    line1: 'Fiolvägen 33',\n    zip: '433 22',\n    city: 'Stockholm',\n    country: 'Sweden',\n  }} paymentMethod='Purchase Order ***' billingAddress={{\n    id: '1',\n    name: 'commercetools1',\n    careOf: 'Madilyn Newman',\n    line1: 'Fiolvägen 33',\n    zip: '433 22',\n    city: 'Stockholm',\n    country: 'Sweden',\n  }} comment='Can I have a 10% discount on Bd10T789?' lineItems={[\n    {\n      id: '1',\n      name: 'Brake Pad Set, disc brake DELPHI L20',\n      price: 115.99,\n      currency: 'USD',\n      quantity: 4,\n      images: ['/brake-pad.png'],\n    },\n    {\n      id: '2',\n      name: 'Brake Pad Set, disc brake DELPHI L20',\n      price: 115.99,\n      currency: 'USD',\n      quantity: 3,\n      images: ['/brake-pad.png'],\n    },\n  ]} transaction={{\n    subtotal: 266.99,\n    shipping: 23.99,\n    taxes: 4.99,\n    total: 299.99,\n    discounts: 0,\n    currency: 'USD',\n  }} />",
       "notes": []
     },
     {
@@ -5033,7 +5033,7 @@
       "propsTypeName": "RuleBuilderProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<RuleBuilder isPreview={false} criteria{/* criteria: see source */} />",
+      "example": "<RuleBuilder isPreview={false} criteria={[\n    {\n      key: 'totalPrice.centAmount',\n      name: 'Cart amount',\n      type: 'text',\n      operators: [\n        { name: 'Is equal', value: '=' },\n        { name: 'Is more than', value: '>' },\n        { name: 'Is less than', value: '<' },\n      ],\n    },\n    {\n      key: 'currency',\n      name: 'Cart currency',\n      type: 'enum',\n      operators: [\n        { name: 'Is', value: 'is' },\n        { name: 'Is not', value: 'is not' },\n      ],\n      values: [\n        { name: 'USD', value: 'usd' },\n        { name: 'EUR', value: 'eur' },\n      ],\n    },\n  ]} />",
       "notes": []
     },
     {
@@ -5143,7 +5143,7 @@
       "propsTypeName": "SidebarProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<Sidebar title='HELLO, ERIKA!' links{/* links: see source */} />",
+      "example": "<Sidebar title='HELLO, ERIKA!' links={[\n    { name: 'Dashboard', href: '#', isActive: true },\n    { name: 'Orders', href: '#' },\n    { name: 'Quotes', href: '#' },\n    { name: 'Company Admin', href: '#' },\n    { name: 'Purchase Lists', href: '#' },\n    { name: 'Settings & Security', href: '#' },\n    { name: 'Addresses', href: '#' },\n  ]} />",
       "notes": []
     },
     {
@@ -5309,7 +5309,7 @@
       "propsTypeName": "ThankYouProps",
       "propsKind": "interface",
       "inheritsFrom": [],
-      "example": "<ThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} orderNumber='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress{/* deliveryAddress: see source */} paymentMethod='Purchase Order ***' billingAddress{/* billingAddress: see source */} lineItems{/* lineItems: see source */} transaction{/* transaction: see source */} />",
+      "example": "<ThankYou account={{\n    email: 'madilyn@gmail.com',\n  }} orderNumber='1155 2224 4452' deliveryMethod='2023-01-15 with UPS' deliveryAddress={{\n    id: '1',\n    name: 'commercetools1',\n    careOf: 'Madilyn Newman',\n    line1: 'Fiolvägen 33',\n    zip: '433 22',\n    city: 'Stockholm',\n    country: 'Sweden',\n  }} paymentMethod='Purchase Order ***' billingAddress={{\n    id: '1',\n    name: 'commercetools1',\n    careOf: 'Madilyn Newman',\n    line1: 'Fiolvägen 33',\n    zip: '433 22',\n    city: 'Stockholm',\n    country: 'Sweden',\n  }} lineItems={[\n    {\n      id: '1',\n      name: 'Brake Pad Set, disc brake DELPHI L20',\n      price: 115.99,\n      currency: 'USD',\n      quantity: 4,\n      images: ['/brake-pad.png'],\n    },\n    {\n      id: '2',\n      name: 'Brake Pad Set, disc brake DELPHI L20',\n      price: 115.99,\n      currency: 'USD',\n      quantity: 3,\n      images: ['/brake-pad.png'],\n    },\n  ]} transaction={{\n    subtotal: 266.99,\n    shipping: 23.99,\n    taxes: 4.99,\n    total: 299.99,\n    discounts: 0,\n    currency: 'USD',\n  }} />",
       "notes": []
     },
     {

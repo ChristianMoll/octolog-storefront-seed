@@ -52,6 +52,9 @@
       "@/*": [
         "./vendor/scaffold/*"
       ],
+      "@lib/*": [
+        "./lib/*"
+      ],
       "use-intl": [
         "./vendor/scaffold/adapters/use-intl"
       ],
@@ -94,6 +97,7 @@
   "include": [
     "app/**/*.ts",
     "app/**/*.tsx",
+    "lib/**/*.ts",
     "vendor/scaffold/**/*.ts",
     "vendor/scaffold/**/*.tsx",
     "next-env.d.ts",
