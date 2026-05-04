@@ -1,44 +1,68 @@
 'use client';
 
-import { Button, Card, ProductTile } from '@scaffold';
-import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { Button, Link, ProductTile } from '@scaffold';
 import type { Product } from '@/types/entity/product';
 
-export default function HomePage({ products }: { products: Product[] }) {
-  const featured = products[0];
-  return (
-    <main className="p-8 space-y-6">
-      <h1 className="text-2xl font-semibold">Storefront seed — smoke test</h1>
+interface Props {
+  products: Product[];
+  heroImage?: string;
+}
 
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Buttons</h2>
-        <div className="flex gap-2">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="ghost">Ghost</Button>
+export default function HomePage({ products, heroImage }: Props) {
+  return (
+    <div className="space-y-12">
+      <section className="relative overflow-hidden rounded-3xl bg-neutral-900 text-white">
+        <div
+          className="absolute inset-0 opacity-60"
+          style={
+            heroImage
+              ? {
+                  backgroundImage: `url(${heroImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }
+              : {
+                  background:
+                    'linear-gradient(135deg, #1f2937 0%, #047857 60%, #065f46 100%)',
+                }
+          }
+        />
+        <div className="relative flex flex-col gap-6 p-10 md:p-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">Ridgeline Supply</p>
+          <h1 className="max-w-2xl text-4xl font-semibold leading-tight md:text-6xl">
+            Gear built for the long haul.
+          </h1>
+          <p className="max-w-xl text-base text-neutral-200">
+            Tested in alpine wind, drenched in shoulder-season rain, and packed for the kind of
+            mileage that puts seams to the test.
+          </p>
+          <div className="flex gap-3">
+            <Link href="/search">
+              <Button variant="primary" size="l">
+                Shop the catalog
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">Card</h2>
-        <Card icon={<ChatBubbleLeftRightIcon />} title="Quotes" summary="Manage quote requests" />
-      </section>
-
-      <section className="space-y-2">
-        <h2 className="text-lg font-medium">
-          ProductTile{' '}
-          <span className="text-sm text-gray-500">
-            ({products.length} product{products.length === 1 ? '' : 's'} loaded from commercetools)
-          </span>
-        </h2>
-        {featured ? (
-          <div className="max-w-sm">
-            <ProductTile item={featured} variant="grid-item" />
-          </div>
+      <section className="space-y-4">
+        <div className="flex items-baseline justify-between">
+          <h2 className="text-2xl font-semibold">Featured gear</h2>
+          <Link href="/search" className="text-sm text-neutral-600 hover:text-black">
+            See all →
+          </Link>
+        </div>
+        {products.length === 0 ? (
+          <p className="text-sm text-neutral-500">No products to feature yet.</p>
         ) : (
-          <p className="text-sm text-gray-500">No products returned.</p>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products.map((p) => (
+              <ProductTile key={p.id} item={p} variant="grid-item" />
+            ))}
+          </div>
         )}
       </section>
-    </main>
+    </div>
   );
 }
