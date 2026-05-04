@@ -2,22 +2,25 @@ import React from 'react';
 import Image from '@/components/atoms/Image';
 import Link from '@/components/atoms/link';
 import { ArrowLongRightIcon as ArrowIcon } from '@heroicons/react/24/solid';
+import { Image as ImageType } from '@/types/image';
 import { HeroTileProps } from './types';
 
-const HeroTile = ({ image, title, links, isPriority, imageQuality }: HeroTileProps) => {
+const FALLBACK_IMAGE: ImageType = {
+  src: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1800',
+};
+
+const HeroTile = ({ image = FALLBACK_IMAGE, title, links, isPriority, imageQuality }: HeroTileProps) => {
   return (
     <div className="relative w-full pb-[75%] md:pb-[56%] lg:pb-[42%]">
-      {image && (
-        <Image
-          {...image}
-          alt={title ?? ''}
-          fill
-          style={{ objectFit: 'cover' }}
-          priority={isPriority}
-          fetchPriority={isPriority ? 'high' : 'auto'}
-          quality={imageQuality}
-        />
-      )}
+      <Image
+        {...image}
+        alt={title ?? ''}
+        fill
+        style={{ objectFit: 'cover' }}
+        priority={isPriority}
+        fetchPriority={isPriority ? 'high' : 'auto'}
+        quality={imageQuality}
+      />
       <div className="absolute left-0 top-0 size-full bg-black/30">
         <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 lg:bottom-12 lg:left-12">
           <h1 className="text-22 font-extrabold leading-loose text-white md:text-28 lg:text-40">{title}</h1>
