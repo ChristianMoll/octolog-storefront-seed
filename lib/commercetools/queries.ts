@@ -95,6 +95,37 @@ export async function getProduct(
   }
 }
 
+export async function getProductBySlug(
+  slug: string,
+  opts: Partial<TenantContext> = {},
+): Promise<Product | null> {
+  if (!hasCommercetoolsCredentials()) {
+    warnFallback();
+    return fallbackProduct(slug);
+  }
+  const tenant = tenantOf(opts);
+  try {
+    const res = await api()
+      .productProjections()
+      .get({
+        queryArgs: {
+          where: `slug(${tenant.locale}="${slug}")`,
+          limit: 1,
+          expand: ["categories[*]"],
+          priceCurrency: tenant.currency,
+          priceCountry: tenant.country,
+          staged: false,
+        },
+      })
+      .execute();
+    const first = res.body.results[0];
+    return first ? normaliseProduct(first, tenant) : null;
+  } catch (err) {
+    console.error(`[commercetools] getProductBySlug failed for ${slug}:`, err);
+    return null;
+  }
+}
+
 export interface ListCategoriesOptions extends Partial<TenantContext> {
   format?: "flat" | "tree";
   limit?: number;

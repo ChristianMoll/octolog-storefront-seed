@@ -54,6 +54,27 @@ The scaffold is configured single-locale. Routes are flat — do NOT add a
 Do not invent route shapes (`/products/...`, `/category/...`, `/en/...`).
 Stick to `/p/[slug]`, `/c/[slug]`, `/search`.
 
+## Site shell
+
+A default site shell ships with the seed and wraps every route. **Do not
+re-architect it** — customize content inside it instead:
+
+- `app/layout.tsx` — server component. Calls `listCategories({ format: 'tree' })`
+  and renders `<SiteHeader categories={...} />` + `<main>{children}</main>` +
+  `<SiteFooter />`. Keep it a server component; do not add `'use client'`.
+- `app/SiteHeader.tsx` — client wrapper around scaffold `Header`. Already
+  wires the search submit to `router.push('/search?q=' + encodeURIComponent(q))`.
+  You may swap the `logo` for a brand asset, populate `pageLinks`, or wire
+  real cart/account state — but do **not** fetch categories from this
+  client component (the layout already does it server-side and passes them
+  in as a prop).
+- `app/SiteFooter.tsx` — client wrapper around scaffold `Footer` with
+  placeholder links. Replace the `links` array with the brand's real entries.
+
+If a page needs to opt out of the shell (rare — e.g. a checkout success
+overlay), use a route group with its own layout (`app/(no-shell)/...`) rather
+than removing the shell from `app/layout.tsx`.
+
 ## Data sourcing
 
 Real commercetools data is available at runtime. The env vars `CTP_API_URL`,
@@ -67,6 +88,7 @@ Hard rules:
   `lib/commercetools/queries.ts`:
   - `listProducts({ limit?, offset?, categoryId?, currency?, country?, locale? })`
   - `getProduct(idOrKey, { currency?, country?, locale? })`
+  - `getProductBySlug(slug, { currency?, country?, locale? })` — resolves a product by its localized slug; returns `null` if not found. Use this for `app/p/[slug]/page.tsx`.
   - `listCategories({ format?: 'flat' | 'tree' })`
   - `searchProducts({ query, limit?, filters?, currency?, country?, locale? })`
 - These are server-only. Call them from server components (the default in
